@@ -159,4 +159,5 @@ DEPENDENCIES
   geokit-rails3
   jquery-rails
   mysql
+  rails (= 3.0.10)
   refinerycms (~> 1.0.8)

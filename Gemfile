@@ -1,6 +1,7 @@
 source :gemcutter
 
-# gem 'rails', '3.0.10'
+
+gem 'rails', '3.0.10'
 
 gem "mysql"
 gem "geocoder"
