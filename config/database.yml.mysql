@@ -1,0 +1,20 @@
+login: &login
+  adapter: mysql2
+  host: localhost
+  username: root
+  password:
+
+development: &development
+  database: bodyarmor
+  <<: *login
+
+test: &test
+  database: bodyarmor
+  <<: *login
+
+production: &production
+  adapter: mysql2
+  host: localhost
+  database: your_production_database
+  username: your_production_database_login
+  password: your_production_database_password
