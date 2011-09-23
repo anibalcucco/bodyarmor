@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  before_filter :load_address, :only => :search
+  before_filter :load_location, :only => :search
   before_filter :load_store, :except => [:index, :search, :new, :create]
 
   def search
@@ -57,11 +57,11 @@ class StoresController < ApplicationController
 
   private
 
-  def load_address
+  def load_location
     if params[:address]
       @location = Geocoder.search(params[:address]).first
     else
-      location = request.location
+      @location = request.location
       #@location = Geocoder.search("40.74,-73.6136").first
     end
   end
