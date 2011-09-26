@@ -1,8 +1,24 @@
-<p>Address:</p>
-<% form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
-  <%= text_field_tag 'address', '', :size => 70 %>
-  <%= text_field_tag 'within', '10', :size => 20 %>
-  <%= submit_tag "Search" %>
-<% end %>
+<h3>Search stores:</h3>
 
+<ul>
+  <li>
+    <p>Using a specific address and distance:</p>
+    <% form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
+      <%= text_field_tag 'address', '', :size => 70 %>
+      <%= text_field_tag 'within', '10', :size => 20 %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to "Using your location detected with the browser", "#", :id => "stores_using_browser" %>
+  </li>
+
+  <li>
+    <%= link_to "Using your location detected with the IP address", "#", :id => "stores_using_ip_address" %>
+  </li>
+</ul>
+
+
+<div id="results"></div>
 <div id="map_canvas" style="width:600px; height:400px;"></div>

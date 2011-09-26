@@ -7,7 +7,10 @@ class StoresController < ApplicationController
 
     respond_to do |format|
       format.html {}
-      format.json { render :json => { :stores => @stores, :latitude => @location.latitude, :longitude => @location.longitude } }
+      format.json { render :json => { :stores => @stores,
+                                      :latitude => @location.latitude,
+                                      :longitude => @location.longitude,
+                                      :address => @location.address } }
     end
   end
 
@@ -62,7 +65,6 @@ class StoresController < ApplicationController
       @location = Geocoder.search(params[:address]).first
     else
       @location = request.location
-      #@location = Geocoder.search("40.74,-73.6136").first
     end
   end
 

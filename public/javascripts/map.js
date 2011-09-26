@@ -52,16 +52,28 @@
     markers.length = 0;
   }
 
+  function showResults(stores, address) {
+    $('#results').html("We found <b>" + stores.length + "</b> stores near <b>" + address + "</b>");
+  }
+
   function searchStores(params) {
     var url = 'stores/search.json';
     if (params) {
       url = url + '?' + params;
     }
+    $('#results').html("Loading stores, please wait...");
     $.getJSON(url, function(data) {
       createMap(data.latitude, data.longitude);
       removeOldMarkers();
       createMarkers(data.stores);
+      showResults(data.stores, data.address);
     });
+  }
+
+  function searchStoresFromPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    searchStores("address=" + latitude + "," + longitude);
   }
 
   function searchForm() {
@@ -71,10 +83,26 @@
     });
   }
 
+  function searchLinks() {
+    $('#stores_using_browser').click(function() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(searchStoresFromPosition);
+      } else {
+        searchStores(null);
+      }
+      return false;
+    });
+
+    $('#stores_using_ip_address').click(function() {
+      searchStores(null);
+      return false;
+    });
+  }
+
   $(document).ready(function() {
     if (!$("#map_canvas").exists()) return;
 
     searchForm();
-    searchStores(null);
+    searchLinks();
   });
 }(this.jQuery));
