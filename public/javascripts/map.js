@@ -54,6 +54,7 @@
 
   function showResults(stores, address) {
     $('#results').html("We found <b>" + stores.length + "</b> stores near <b>" + address + "</b>");
+    $('#address').val(address);
   }
 
   function searchStores(params) {
@@ -63,17 +64,16 @@
     }
     $('#results').html("Loading stores, please wait...");
     $.getJSON(url, function(data) {
+      showResults(data.stores, data.address);
       createMap(data.latitude, data.longitude);
       removeOldMarkers();
       createMarkers(data.stores);
-      showResults(data.stores, data.address);
     });
   }
 
   function searchStoresFromPosition(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    searchStores("address=" + latitude + "," + longitude);
+    var latlng = escape(position.coords.latitude + "," + position.coords.longitude);
+    searchStores("address=" + latlng);
   }
 
   function searchForm() {

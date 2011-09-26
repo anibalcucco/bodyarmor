@@ -2,10 +2,10 @@
 
 <ul>
   <li>
-    <p>Using a specific address and distance:</p>
+    <p>Using a specific address and distance (miles):</p>
     <% form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
       <%= text_field_tag 'address', '', :size => 70 %>
-      <%= text_field_tag 'within', '10', :size => 20 %>
+      <%= text_field_tag 'within', '100', :size => 20 %>
       <%= submit_tag "Search" %>
     <% end %>
   </li>
