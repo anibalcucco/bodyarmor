@@ -3,7 +3,7 @@ class StoresController < ApplicationController
   before_filter :load_store, :except => [:index, :search, :new, :create]
 
   def search
-    @stores = Store.within(params[:within] || 100, :origin => @location.address)
+    @stores = Store.within(params[:within] || 100, :origin => normalize(@location.address))
 
     respond_to do |format|
       format.html {}
@@ -66,6 +66,10 @@ class StoresController < ApplicationController
     else
       @location = request.location
     end
+  end
+
+  def normalize(address)
+    address.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').to_s
   end
 
   def load_store
