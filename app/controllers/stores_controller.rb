@@ -1,4 +1,6 @@
 class StoresController < ApplicationController
+  before_filter :authenticate_user!, :except => [:search, :preview]
+
   before_filter :load_location, :only => :search
   before_filter :load_store, :except => [:index, :search, :new, :create]
 
