@@ -53,16 +53,12 @@
   }
 
   function showResults(stores, address) {
-    $('#results').html("We found <b>" + stores.length + "</b> stores near <b>" + address + "</b>");
+    $('#results').html(stores.length + " stores found.");
     $('#address').val(address);
   }
 
-  function searchStores(params) {
-    var url = 'stores/search.json';
-    if (params) {
-      url = url + '?' + params;
-    }
-    $('#results').html("Loading stores, please wait...");
+  function searchStores(url) {
+    $('#results').html("Loading stores...");
     $.getJSON(url, function(data) {
       showResults(data.stores, data.address);
       createMap(data.latitude, data.longitude);
@@ -71,38 +67,45 @@
     });
   }
 
-  function searchStoresFromPosition(position) {
-    var latlng = escape(position.coords.latitude + "," + position.coords.longitude);
-    searchStores("address=" + latlng);
-  }
-
-  function searchForm() {
-    $('#search_form').submit(function() {
-      searchStores($("#address, #within").serialize());
+  function bindSearchForm() {
+    $('#search_form').live('submit', function() {
+      searchStores("stores/search.json?" + $("#address, #within").serialize());
       return false;
     });
   }
 
-  function searchLinks() {
-    $('#stores_using_browser').click(function() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(searchStoresFromPosition);
-      } else {
-        searchStores(null);
+  function openLightbox(url) {
+    $.colorbox({
+      href: '/map',
+      scrolling:false,
+      width:"645px",
+      height:"470px",
+      onComplete: function() {
+        searchStores(url);
       }
-      return false;
     });
+  }
 
-    $('#stores_using_ip_address').click(function() {
-      searchStores(null);
-      return false;
-    });
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latlng = escape(position.coords.latitude + "," + position.coords.longitude);
+        openLightbox("stores/search.json?address=" + latlng);
+      });
+    } else {
+      openLightbox('stores/search.json');
+    }
   }
 
   $(document).ready(function() {
-    if (!$("#map_canvas").exists()) return;
+    bindSearchForm();
 
-    searchForm();
-    searchLinks();
+    $("#store_locator").click(function() {
+      getLocation();
+    });
+
+    $(document).bind('cbox_closed', function() {
+      map = null;
+    });
   });
 }(this.jQuery));
