@@ -4,7 +4,7 @@ Bodyarmor::Application.routes.draw do
       get 'preview'
     end
     collection do
-      get 'search'
+      get 'nearest'
     end
   end
   match 'map' => 'map#index'

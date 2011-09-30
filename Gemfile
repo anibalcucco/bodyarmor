@@ -5,7 +5,6 @@ gem 'rails', '3.0.10'
 
 gem "mysql"
 gem "geocoder"
-gem 'geokit-rails3'
 gem "jquery-rails"
 
 # REFINERY CMS ================================================================

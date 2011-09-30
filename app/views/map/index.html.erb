@@ -1,9 +1,8 @@
-<% form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
+Address:
+<%= form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
   <%= text_field_tag 'address', '', :size => 65 %>
-  <%= text_field_tag 'within', '100', :size => 3 %>
   <%= submit_tag "Search" %>
 <% end %>
 
-<div id="results"></div>
-
+<div id="result"></div>
 <div id="map_canvas" style="width:600px; height:400px;"></div>

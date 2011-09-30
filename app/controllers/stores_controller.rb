@@ -1,18 +1,16 @@
 class StoresController < ApplicationController
-  before_filter :authenticate_user!, :except => [:search, :preview]
+  before_filter :authenticate_user!, :except => [:nearest, :preview]
 
-  before_filter :load_location, :only => :search
-  before_filter :load_store, :except => [:index, :search, :new, :create]
+  before_filter :load_location, :only => :nearest
+  before_filter :load_store, :except => [:index, :nearest, :new, :create]
 
-  def search
-    @stores = Store.within(params[:within] || 100, :origin => normalize(@location.address))
+  def nearest
+    @store = Store.near(@location.address, 1000, :order => "distance").first 
 
     respond_to do |format|
       format.html {}
-      format.json { render :json => { :stores => @stores,
-                                      :latitude => @location.latitude,
-                                      :longitude => @location.longitude,
-                                      :address => @location.address } }
+      format.json { render :json => { :stores   => @store,
+                                      :location => @location.address } }
     end
   end
 
@@ -67,6 +65,8 @@ class StoresController < ApplicationController
       @location = Geocoder.search(params[:address]).first
     else
       @location = request.location
+      # use this in dev
+      # @location = Geocoder.search("8800 Venice Blvd, Los Angeles, California, 90034").first
     end
   end
 
