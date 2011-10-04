@@ -1,55 +1,76 @@
 (function($) {
   var infoWindow = new google.maps.InfoWindow();
   var map = null;
-  var marker = null;
+  var markers = [];
+  var bounds = new google.maps.LatLngBounds();
 
-  function findNearest(address) {
-    var url = "stores/nearest.json";
+  function near(address) {
+    var url = "stores/near.json";
     if (address) {
       url = url + "?address=" + address;
     }
     $.getJSON(url, function(data) {
       var location = data.location;
-      if (data.stores) {
-        var store = data.stores.store;
-        $('#result').html(store.address);
-        $('#address').val(location);
-        createMap(store.latitude, store.longitude);
-        createMarker(store);
-      } else {
-        $('#result').html("No stores found near: " + location);
-      }
+      var stores   = data.stores;
+      $('#result').html(stores.length + " stores found near <b>" + location.address + "</b>");
+      $('#address').val(location.address);
+      create();
+      reset();
+      addStores(stores);
+      center(stores, location);
     });
   }
 
-  function createMap(latitude, longitude) {
+  function create() {
     var options = { mapTypeId: google.maps.MapTypeId.ROADMAP, zoom: 15 };
     if (!map) {
       map = new google.maps.Map(document.getElementById('map_canvas'), options);
     }
-    map.setCenter(new google.maps.LatLng(latitude, longitude));
   }
 
-  function createMarker(store) {
-    if (marker) {
-      marker.setMap(null);
-      marker = null;
-    }
-
-    var latlng = new google.maps.LatLng(store.latitude, store.longitude);
-    marker = new google.maps.Marker({
-      position: latlng,
-      animation: google.maps.Animation.DROP,
-      title: store.name
+  function addStores(stores) {
+    $.each(stores, function(key, val) {
+      var store = val.store;
+      var title = store.name + "\n" + store.address;
+      var latlng = new google.maps.LatLng(store.latitude, store.longitude);
+      var marker = new google.maps.Marker({
+        position: latlng,
+        animation: google.maps.Animation.DROP,
+        title: title
+      });
+      // optional code to show info window
+      // showInfoWindow(marker, store);
+      marker.setMap(map);
+      bounds.extend(latlng);
+      markers.push(marker);
     });
-    // optional code to show info window
-    // showInfoWindow(marker, store);
-    marker.setMap(map);
+  }
+
+  function center(stores, location) {
+    switch(stores.length) {
+      case 0:
+        map.setCenter(new google.maps.LatLng(location.latitude, location.longitude));
+        break;
+      case 1:
+        var store = stores[0].store;
+        map.setCenter(new google.maps.LatLng(store.latitude, store.longitude));
+        break;
+      default:
+        map.fitBounds(bounds);
+    }
+  }
+
+  function reset() {
+    for (i in markers) {
+      markers[i].setMap(null);
+    }
+    markers.length = 0;
+    bounds = new google.maps.LatLngBounds();
   }
 
   function bindSearchForm() {
     $('#search_form').live('submit', function() {
-      findNearest($("#address").val());
+      near($("#address").val());
       return false;
     });
   }
@@ -61,7 +82,7 @@
       width:"645px",
       height:"470px",
       onComplete: function() {
-        findNearest(address);
+        near(address);
       }
     });
   }

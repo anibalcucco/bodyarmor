@@ -1,16 +1,18 @@
 class StoresController < ApplicationController
-  before_filter :authenticate_user!, :except => [:nearest, :preview]
+  before_filter :authenticate_user!, :except => [:near, :preview]
 
-  before_filter :load_location, :only => :nearest
-  before_filter :load_store, :except => [:index, :nearest, :new, :create]
+  before_filter :load_location, :only => :near
+  before_filter :load_store, :except => [:index, :near, :new, :create]
 
-  def nearest
-    @store = Store.near(@location.address, 1000, :order => "distance").first 
+  def near
+    @stores = Store.near(@location.address, 25, :order => "distance")
 
     respond_to do |format|
       format.html {}
-      format.json { render :json => { :stores   => @store,
-                                      :location => @location.address } }
+      format.json { render :json => { :stores   => @stores,
+                                      :location => { :address => @location.address,
+                                                     :latitude => @location.latitude,
+                                                     :longitude => @location.longitude } } }
     end
   end
 
