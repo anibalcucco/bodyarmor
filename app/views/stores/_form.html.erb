@@ -21,6 +21,11 @@
     <%= f.text_field :address, :size => 100 %>
   </p>
 
+  <p>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </p>
+
   <% unless @store.new_record? %>
     <p>
       <%= f.label :latitude %>

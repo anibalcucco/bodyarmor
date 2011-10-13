@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110922001343) do
+ActiveRecord::Schema.define(:version => 20111018005606) do
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20110922001343) do
     t.string "address"
     t.float  "longitude"
     t.float  "latitude"
+    t.string "phone"
   end
 
   create_table "user_plugins", :force => true do |t|

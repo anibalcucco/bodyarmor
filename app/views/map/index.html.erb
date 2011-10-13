@@ -1,8 +1,25 @@
-Address:
-<%= form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
-  <%= text_field_tag 'address', '', :size => 65 %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div id="map">
+  <div id="form">
+    STORE LOCATOR
+    <%= form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
+      <table>
+        <tr>
+          <td>Your zip code:</td>
+          <td><%= text_field_tag 'address', '', :size => 20, :value => @location.postal_code %></td>
+        </tr>
+        <tr>
+          <td>Search within:</td>
+          <td><%= select_tag "within", options_for_select([["5 Miles", "5"], ["10 Miles", "10"], ["25 Miles", "25"]]) %></td>
+          <td><%= submit_tag "FIND A STORE" %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
 
-<div id="result"></div>
-<div id="map_canvas" style="width:600px; height:400px;"></div>
+  <div id="stores">
+    <ol id="stores_list" type="A"></ol>
+  </div>
+  <div id="map_canvas"></div>
+</div>
+
+<%= render :partial => "store_template" %>

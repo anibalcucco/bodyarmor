@@ -3,17 +3,17 @@
   var map = null;
   var markers = [];
   var bounds = new google.maps.LatLngBounds();
+  var stores = null;
+  var location = null;
 
-  function near(address) {
-    var url = "stores/near.json";
-    if (address) {
-      url = url + "?address=" + address;
+  function near(params) {
+    var url = "/map/near.json";
+    if (params) {
+      url = url + "?" + params;
     }
     $.getJSON(url, function(data) {
-      var location = data.location;
-      var stores   = data.stores;
-      $('#result').html(stores.length + " stores found near <b>" + location.address + "</b>");
-      $('#address').val(location.address);
+      location = data.location;
+      stores   = data.stores;
       create();
       reset();
       addStores(stores);
@@ -32,12 +32,15 @@
     $.each(stores, function(key, val) {
       var store = val.store;
       var title = store.name + "\n" + store.address;
+      var letter = String.fromCharCode(65 + key);
       var latlng = new google.maps.LatLng(store.latitude, store.longitude);
       var marker = new google.maps.Marker({
         position: latlng,
         animation: google.maps.Animation.DROP,
+        icon: "http://maps.google.com/mapfiles/marker" + letter + ".png",
         title: title
       });
+      $("#store_template").tmpl(store).appendTo("#stores_list");
       // optional code to show info window
       // showInfoWindow(marker, store);
       marker.setMap(map);
@@ -70,20 +73,8 @@
 
   function bindSearchForm() {
     $('#search_form').live('submit', function() {
-      near($("#address").val());
+      near($("#address, #within").serialize());
       return false;
-    });
-  }
-
-  function openLightbox(address) {
-    $.colorbox({
-      href: '/map',
-      scrolling:false,
-      width:"645px",
-      height:"470px",
-      onComplete: function() {
-        near(address);
-      }
     });
   }
 
@@ -114,22 +105,17 @@
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var latlng = escape(position.coords.latitude + "," + position.coords.longitude);
-        openLightbox(latlng);
+        $("#address").val(latlng);
+        $('#search_form').submit();
       });
-    } else {
-      openLightbox(null);
     }
   }
 
   $(document).ready(function() {
     bindSearchForm();
 
-    $("#store_locator").click(function() {
-      openLightbox(null);
-    });
-
-    $(document).bind('cbox_closed', function() {
-      map = null;
-    });
+    if ($("#map_canvas").length) {
+      $('#search_form').submit();
+    }
   });
 }(this.jQuery));

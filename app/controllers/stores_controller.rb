@@ -1,20 +1,7 @@
 class StoresController < ApplicationController
   before_filter :authenticate_user!, :except => [:near, :preview]
 
-  before_filter :load_location, :only => :near
   before_filter :load_store, :except => [:index, :near, :new, :create]
-
-  def near
-    @stores = Store.near(@location.address, 25, :order => "distance")
-
-    respond_to do |format|
-      format.html {}
-      format.json { render :json => { :stores   => @stores,
-                                      :location => { :address => @location.address,
-                                                     :latitude => @location.latitude,
-                                                     :longitude => @location.longitude } } }
-    end
-  end
 
   def preview
     render :layout => false
@@ -61,20 +48,6 @@ class StoresController < ApplicationController
   end
 
   private
-
-  def load_location
-    if params[:address]
-      @location = Geocoder.search(params[:address]).first
-    else
-      @location = request.location
-      # use this in dev
-      # @location = Geocoder.search("8800 Venice Blvd, Los Angeles, California, 90034").first
-    end
-  end
-
-  def normalize(address)
-    address.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').to_s
-  end
 
   def load_store
     @store = Store.find(params[:id])

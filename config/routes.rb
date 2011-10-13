@@ -3,9 +3,7 @@ Bodyarmor::Application.routes.draw do
     member do
       get 'preview'
     end
-    collection do
-      get 'near'
-    end
   end
   match 'map' => 'map#index'
+  match 'map/near' => 'map#near'
 end
