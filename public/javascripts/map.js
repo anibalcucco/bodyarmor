@@ -86,9 +86,13 @@
       $.getJSON(url, function(data) {
         location = data.location;
         stores   = data.stores;
-        create();
-        addStores(stores);
-        center(stores, location);
+        if ( stores.length == 0 ) {
+          $("#stores_list").html("No stores found");
+        } else {
+          create();
+          addStores(stores);
+          center(stores, location);
+        }
         $("#search_button").attr('disabled', false).val("FIND A STORE");
       });
       return false;
