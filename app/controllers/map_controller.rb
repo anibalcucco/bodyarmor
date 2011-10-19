@@ -17,12 +17,10 @@ class MapController < ApplicationController
   private
 
   def load_location
-    if params[:address]
+    if params[:address].present?
       @location = Geocoder.search(params[:address]).first
     else
       @location = request.location
-      # use this in dev
-      # @location = Geocoder.search("90210").first
     end
   end
 
