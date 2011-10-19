@@ -3,6 +3,8 @@
   var map = null;
   var markers = [];
   var bounds = new google.maps.LatLngBounds();
+  var directionsService = new google.maps.DirectionsService();
+  var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
   var stores = null;
   var location = null;
 
@@ -25,6 +27,7 @@
     var options = { mapTypeId: google.maps.MapTypeId.ROADMAP, zoom: 15 };
     if (!map) {
       map = new google.maps.Map(document.getElementById('map_canvas'), options);
+      directionsDisplay.setMap(map);
     }
   }
 
@@ -46,6 +49,19 @@
       marker.setMap(map);
       bounds.extend(latlng);
       markers.push(marker);
+    });
+  }
+
+  function route(address) {
+    var request = {
+      origin: location.address,
+      destination: address,
+      travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+    directionsService.route(request, function(result, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(result);
+      }
     });
   }
 
@@ -74,6 +90,13 @@
   function bindSearchForm() {
     $('#search_form').live('submit', function() {
       near($("#address, #within").serialize());
+      return false;
+    });
+  }
+
+  function bindDirections() {
+    $(".directions").live('click', function() {
+      route($(this).data("address"));
       return false;
     });
   }
@@ -113,6 +136,7 @@
 
   $(document).ready(function() {
     bindSearchForm();
+    bindDirections();
 
     if ($("#map_canvas").length) {
       $('#search_form').submit();
