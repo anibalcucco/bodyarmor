@@ -10,7 +10,7 @@
         <tr>
           <td>Search within:</td>
           <td><%= select_tag "within", options_for_select([["5 Miles", "5"], ["10 Miles", "10"], ["25 Miles", "25"]]) %></td>
-          <td><%= submit_tag "FIND A STORE" %></td>
+          <td><%= submit_tag "FIND A STORE", :id => "search_button" %></td>
         </tr>
       </table>
     <% end %>

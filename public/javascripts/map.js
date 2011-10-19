@@ -1,34 +1,18 @@
 (function($) {
-  var infoWindow = new google.maps.InfoWindow();
-  var map = null;
-  var markers = [];
-  var bounds = new google.maps.LatLngBounds();
+  var infoWindow        = new google.maps.InfoWindow();
+  var map               = null;
+  var markers           = [];
+  var bounds            = null;
   var directionsService = new google.maps.DirectionsService();
-  var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
-  var stores = null;
-  var location = null;
-
-  function near(params) {
-    var url = "/map/near.json";
-    if (params) {
-      url = url + "?" + params;
-    }
-    $.getJSON(url, function(data) {
-      location = data.location;
-      stores   = data.stores;
-      create();
-      reset();
-      addStores(stores);
-      center(stores, location);
-    });
-  }
+  var directionsDisplay = null;
+  var stores            = null;
+  var location          = null;
 
   function create() {
-    var options = { mapTypeId: google.maps.MapTypeId.ROADMAP, zoom: 15 };
-    if (!map) {
-      map = new google.maps.Map(document.getElementById('map_canvas'), options);
-      directionsDisplay.setMap(map);
-    }
+    var options       = { mapTypeId: google.maps.MapTypeId.ROADMAP, zoom: 15 };
+    map               = new google.maps.Map(document.getElementById('map_canvas'), options);
+    directionsDisplay = new google.maps.DirectionsRenderer({ map: map, suppressMarkers: true });
+    bounds            = new google.maps.LatLngBounds();
   }
 
   function addStores(stores) {
@@ -84,12 +68,29 @@
       markers[i].setMap(null);
     }
     markers.length = 0;
-    bounds = new google.maps.LatLngBounds();
+    $("#stores_list").empty();
+    map = null;
+    if (directionsDisplay) {
+      directionsDisplay.setMap(null);
+    }
+    directionsDisplay = null;
+    bounds = null;
   }
 
   function bindSearchForm() {
-    $('#search_form').live('submit', function() {
-      near($("#address, #within").serialize());
+    $("#search_form").live('submit', function() {
+      reset();
+      $("#search_button").attr('disabled', true).val("FINDING STORES...");
+
+      var url = "/map/near.json?" + $("#address, #within").serialize();
+      $.getJSON(url, function(data) {
+        location = data.location;
+        stores   = data.stores;
+        create();
+        addStores(stores);
+        center(stores, location);
+        $("#search_button").attr('disabled', false).val("FIND A STORE");
+      });
       return false;
     });
   }
@@ -138,8 +139,6 @@
     bindSearchForm();
     bindDirections();
 
-    if ($("#map_canvas").length) {
-      $('#search_form').submit();
-    }
+    $('#search_form').submit();
   });
 }(this.jQuery));
