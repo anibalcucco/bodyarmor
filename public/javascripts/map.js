@@ -1,5 +1,4 @@
 (function($) {
-  var infoWindow        = new google.maps.InfoWindow();
   var map               = null;
   var markers           = [];
   var bounds            = null;
@@ -15,22 +14,20 @@
     bounds            = new google.maps.LatLngBounds();
   }
 
-  function addStores(stores) {
+  function addStores() {
     $.each(stores, function(key, val) {
       var store = val.store;
       var title = store.name + "\n" + store.address;
       var letter = String.fromCharCode(65 + key);
       var latlng = new google.maps.LatLng(store.latitude, store.longitude);
       var marker = new google.maps.Marker({
-        position: latlng,
+        map:       map,
+        position:  latlng,
         animation: google.maps.Animation.DROP,
-        icon: "http://maps.google.com/mapfiles/marker" + letter + ".png",
-        title: title
+        icon:      "http://maps.google.com/mapfiles/marker" + letter + ".png",
+        title:     title
       });
       $("#store_template").tmpl(store).appendTo("#stores_list");
-      // optional code to show info window
-      // showInfoWindow(marker, store);
-      marker.setMap(map);
       bounds.extend(latlng);
       markers.push(marker);
     });
@@ -49,7 +46,7 @@
     });
   }
 
-  function center(stores, location) {
+  function center() {
     switch(stores.length) {
       case 0:
         map.setCenter(new google.maps.LatLng(location.latitude, location.longitude));
@@ -90,8 +87,8 @@
           $("#stores_list").html("No stores found");
         } else {
           create();
-          addStores(stores);
-          center(stores, location);
+          addStores();
+          center();
         }
         $("#search_button").attr('disabled', false).val("FIND A STORE");
       });
@@ -104,39 +101,6 @@
       route($(this).data("address"));
       return false;
     });
-  }
-
-  function showInfo(marker, id) {
-    $.ajax({
-      url: 'stores/' + id + '/preview',
-      success: function(response) {
-        infoWindow.setContent(response);
-        infoWindow.open(map, marker);
-      },
-      error: function(request, textStatus, errorThrown) {
-        alert("There was an error showing Store info");
-      }
-    });
-  }
-
-  function showInfoWindow(marker, store) {
-    google.maps.event.addListener(marker, 'closeclick', function () {
-      infoWindow.setContent("");
-    });
-    google.maps.event.addListener(marker, 'click', function () {
-      infoWindow.close();
-      showStore(marker, store.id);
-    });
-  }
-
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var latlng = escape(position.coords.latitude + "," + position.coords.longitude);
-        $("#address").val(latlng);
-        $('#search_form').submit();
-      });
-    }
   }
 
   $(document).ready(function() {
