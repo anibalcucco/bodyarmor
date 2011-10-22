@@ -1,4 +1,21 @@
-/*
-  Override default refinery application CSS below.
-  Formatting applies to all frontend.
-*/
+#videos {
+  width: 520px;
+  padding: 10px 30px 10px 30px;
+}
+#title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#player {
+  float: left;
+  padding-right: 20px;
+}
+#details {
+  float: left;
+  width: 200px;
+  height: 180px;
+  overflow: hidden;
+}
+.jcarousel-skin-videos {
+  clear: both;
+}
