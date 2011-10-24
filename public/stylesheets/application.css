@@ -1,21 +1,99 @@
-#videos {
+body {
   width: 520px;
+}
+
+a:link {
+  color: orange;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 10px;
+  margin: 0;
+}
+
+h2 {
+  font-weight: normal;
+  color: orange;
+  font-size: 19px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 7px;
+  color: gray;
+  margin: 0;
+}
+
+h4 {
+  font-size: 11px;
+  color: gray;
+  margin: 0;
+}
+
+.button {
+  color: orange;
+}
+
+.separator {
+  border-bottom: 1px dotted #333;
+  clear: both;
+}
+
+.jcarousel-skin-videos {
+  clear: both;
+}
+
+#videos {
+  clear: both;
   padding: 10px 30px 10px 30px;
 }
-#title {
+
+#videos #title {
   font-weight: bold;
   margin-bottom: 10px;
 }
-#player {
+
+#videos #player {
   float: left;
-  padding-right: 20px;
+  width: 60%;
 }
-#details {
-  float: left;
-  width: 200px;
+
+#videos #details {
+  float: right;
+  width: 40%;
   height: 180px;
   overflow: hidden;
 }
-.jcarousel-skin-videos {
-  clear: both;
+
+#locator {
+  float: left;
+  width: 50%;
+}
+
+#newsletter {
+  float: right;
+  width: 50%;
+}
+
+#newsletter input {
+  display: block;
+}
+
+#events {
+  float: left;
+  width: 50%;
+}
+
+#twitter {
+  float: right;
+  width: 50%;
+}
+
+#twitter #feed_header {
+  float: left;
+}
+
+#twitter #see_more {
+  float: right;
 }

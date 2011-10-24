@@ -6,4 +6,5 @@ Bodyarmor::Application.routes.draw do
   end
   match 'map' => 'map#index'
   match 'map/near' => 'map#near'
+  match 'home' => 'home#index'
 end
