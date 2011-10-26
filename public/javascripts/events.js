@@ -1,34 +1,37 @@
 (function($) {
-  //var events   = [];
-  var carousel = null;
-  var profile  = null;
-  var token    = "AAACEdEose0cBAOWdJPZAuRgsrZCPLsYJ3S9mhbJITZCPChE022VRg02SESz3JKUUq6bkjNPP8CZBkTwqTtyYP087DoZBmtOMZD";
+  var carousel    = null;
+  var carouselObj = null;
 
-  function load() {
-    var url = "https://graph.facebook.com/" + profile + "/events?access_token=" + token;
-    $.getJSON(url, {}, function(data) {
-      events = data.data;
-      $.each(events, function(key, event) {
-        carousel.append(li(event));
-      });
-      if (events.length > 0) {
-        carousel.jcarousel({});
-      } else {
-        carousel.html("No events found");
-      }
-    });
+  function callback(c, state) {
+    carouselObj = c;
   }
 
-  function li(event) {
-    return '<li><a href="http://www.facebook.com/events/' + event.id + '" target="_blank"><img src="https://graph.facebook.com/' + event.id + '/picture"></a></li>';
+  function bindEventsList() {
+    $("#events select").change(function() {
+      carouselObj.reset();
+      var selected = $(this).find("option:selected").first().val();
+      var items = $("#" + selected).find(".item");
+      var description = $("#" + selected).find(".description").html();
+
+      $("#event_description").html(description);
+
+      $.each(items, function(key, item) {
+        carouselObj.add(key, $(item).html());
+      });
+      carouselObj.size(items.length);
+
+    }).trigger('change');
   }
 
   $(document).ready(function() {
     carousel = $("#events #carousel");
-    profile  = carousel.data("profile");
-
     if (carousel.length) {
-      load();
+      carousel.jcarousel( {
+        size: 4,
+        scroll: 1,
+        initCallback: callback
+      });
+      bindEventsList();
     }
   });
 }(this.jQuery));

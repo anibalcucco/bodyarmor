@@ -3,7 +3,7 @@ body {
 }
 
 a:link {
-  color: orange;
+  color: #f8481c;
 }
 
 h1 {
@@ -14,7 +14,7 @@ h1 {
 
 h2 {
   font-weight: normal;
-  color: orange;
+  color: #f8481c;
   font-size: 19px;
   margin: 0;
 }
@@ -31,8 +31,12 @@ h4 {
   margin: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .button {
-  color: orange;
+  color: #f8481c;
 }
 
 .separator {
@@ -40,8 +44,12 @@ h4 {
   clear: both;
 }
 
-.jcarousel-skin-videos {
+.jcarousel-skin-bodyarmor {
   clear: both;
+}
+
+.event {
+  display: none;
 }
 
 #videos {
