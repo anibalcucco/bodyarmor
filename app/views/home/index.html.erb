@@ -22,13 +22,13 @@
 <h1>READY TO EXPERIENCE</h1>
 <h2>THE DIFFERENCE?</h2>
 
-<div id="locator">
+<div id="locator" class="left">
   <h3>PRODUCT</h3>
   <h4>LOCATOR</h4>
   <input type="button" value="FIND A STORE" class="button" />
 </div>
 
-<div id="newsletter">
+<div class="right">
   <form id="newsletter_form" method="post" action="https://promojam.wufoo.com/forms/s7p2m7/#public">
     <h3>NEWSLETTER & EXCLUSIVE OFFER</h3>
     <h4>SIGNUP</h4>
@@ -45,20 +45,17 @@
 <h2>IN ACTION</h2>
 
 <div id="videos">
-  <div id="player"></div>  
-  <div id="details">
-    <div id="title"></div>  
-    <div id="description"></div>  
-  </div>
+  <div id="current"></div>
   <ul id="carousel" data-album="61259" class="jcarousel-skin-bodyarmor"></ul>
 </div>
 
 <div class="separator"></div>
 
-<div id="events">
+<div id="events" class="left">
   <h1>EVENTS</h1>
   <h2>HERE'S THE SKINNY</h2>
 
+  <h5>See Our Upcoming Events</h5>
   <select>
     <option value="event1">Event1</option>
     <option value="event2">Event2</option>
@@ -68,6 +65,7 @@
 
   <div id="event1" class="event">
     <div class="description">The Description</div>
+    <div class="url">http://www.google.com</div>
     <div class="item">
       <img src="http://b.vimeocdn.com/ts/203/444/203444961_100.jpg">
       <img src="http://b.vimeocdn.com/ts/209/725/20972504_100.jpg">
@@ -104,14 +102,14 @@
   <ul id="carousel" data-profile="PepsiIndia" class="jcarousel-skin-bodyarmor" width="250px"></ul>
 </div>
 
-<div id="twitter">
+<div id="twitter" class="right">
   <h1>ACTION</h1>
   <h2>AS IT HAPPENS</h2>
 
-  <div id="feed_header">Twitter Feed</div>
-  <a id="see_more" href="http://twitter.com/drinkbodyarmor" target="_blank">see more >></a>
+  <h5 class="left">Twitter Feed</h5>
+  <a id="see_more" class="link right" href="http://twitter.com/drinkbodyarmor" target="_blank">see more >></a>
 
-  <ul id="feed" data-username="drinkbodyarmor"></ul>
+  <ul id="feed" class="clear" data-username="drinkbodyarmor"></ul>
 </div>
 
 <div class="separator"></div>
@@ -120,3 +118,33 @@
   <h1>BODYARMOR</h1>
   <h2>CURRENT PROMOTIONS</h2>
 </div>
+
+<script id="tweet_template" type="text/x-jquery-tmpl">
+  <li class="tweet">
+    <p class="text">
+      ${text}
+    </p>
+    <span class="user">
+      <a href="http://twitter.com/${user.screen_name}" class="link">${user.name}</a>
+    </span>
+    <span class="date">
+      ${$.timeago(created_at)}
+    </span>
+  </li>
+</script>
+
+<script id="video_template" type="text/x-jquery-tmpl">
+  <div class="player left">
+    <iframe src="http://player.vimeo.com/video/${id}"
+            width="260"
+            height="180"
+            frameborder="0"
+            webkitAllowFullScreen
+            allowFullScreen>
+    </iframe>
+  </div>
+  <div class="details right">
+    <h6>${title}</h6>
+    <p>${description}</p>
+  </div>
+</script>

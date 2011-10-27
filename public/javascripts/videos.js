@@ -2,6 +2,8 @@
   var videos   = [];
   var carousel = null;
   var album    = null;
+  var current  = null;
+  var item     = null;
 
   function load() {
     var url = "http://vimeo.com/api/v2/album/" + album + "/videos.json?callback=?";
@@ -11,7 +13,7 @@
         carousel.append(li(video));
       });
       if (videos.length > 0) {
-        carousel.jcarousel({});
+        carousel.jcarousel({ scroll: 1 });
         show(videos[0].id);
       } else {
         carousel.html("No videos in album");
@@ -23,15 +25,8 @@
     return '<li id="' + video.id + '"><img src="' + video.thumbnail_small + '"></li>';
   }
 
-  function iframe(video) {
-    return '<iframe src="http://player.vimeo.com/video/' + video.id + '" width="' + 260 + '" height="' + 180 + '" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>';
-  }
-
   function show(id) {
-    var video = get(id);
-    $("#videos #description").html(video.description);
-    $("#videos #title").html(video.title);
-    $("#videos #player").html(iframe(video));
+    current.html($("#video_template").tmpl(get(id)));
   }
 
   function get(id) {
@@ -45,7 +40,7 @@
   }
 
   function setupCarousel() {
-    $(".jcarousel-item").live('click', function(e) {
+    item.live('click', function(e) {
       show($(this).attr('id'));
       e.preventDefault();
     });
@@ -53,7 +48,9 @@
 
   $(document).ready(function() {
     carousel = $("#videos #carousel");
+    current  = $("#videos #current");
     album    = carousel.data("album");
+    item     = $("#videos .jcarousel-item");
 
     if (carousel.length) {
       load();

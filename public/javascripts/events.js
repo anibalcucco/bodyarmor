@@ -12,11 +12,13 @@
       var selected = $(this).find("option:selected").first().val();
       var items = $("#" + selected).find(".item");
       var description = $("#" + selected).find(".description").html();
+      var url = $("#" + selected).find(".url").html();
 
       $("#event_description").html(description);
 
       $.each(items, function(key, item) {
-        carouselObj.add(key, $(item).html());
+        var html = '<a href="' + url + '" target="_blank">' + $(item).html() + '</a>';
+        carouselObj.add(key, html);
       });
       carouselObj.size(items.length);
 
@@ -27,7 +29,6 @@
     carousel = $("#events #carousel");
     if (carousel.length) {
       carousel.jcarousel( {
-        size: 4,
         scroll: 1,
         initCallback: callback
       });

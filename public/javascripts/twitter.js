@@ -8,16 +8,12 @@
     $.getJSON(url, {}, function(data) {
       tweets = data;
       $.each(tweets, function(key, tweet) {
-        feed.append(li(tweet));
+        $("#tweet_template").tmpl(tweet).appendTo("#feed");
       });
       if (tweets.length == 0) {
         feed.html("No tweets found");
       }
     });
-  }
-
-  function li(tweet) {
-    return '<li>' + tweet.text + '</li>';
   }
 
   $(document).ready(function() {

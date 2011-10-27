@@ -1,9 +1,6 @@
 body {
   width: 520px;
-}
-
-a:link {
-  color: #f8481c;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -14,9 +11,9 @@ h1 {
 
 h2 {
   font-weight: normal;
-  color: #f8481c;
+  color: #f65e38;
   font-size: 19px;
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
 h3 {
@@ -31,16 +28,77 @@ h4 {
   margin: 0;
 }
 
+h5 {
+  font-size: 12px;
+  color: black;
+  margin: 0;
+}
+
+h6 {
+  font-weight: bold;
+  color: #292929;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+h5.left {
+  display: inline;
+}
+
+p {
+  color: #666666;
+  font-size: 10px;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+input {
+  display: block;
+}
+
+.right a {
+  text-align: right;
+  display: inline;
+}
+
 .hide {
   display: none;
 }
 
+.left {
+  float: left;
+  width: 50%;
+}
+
+.right {
+  float: right;
+  width: 50%;
+}
+
 .button {
-  color: #f8481c;
+  color: #f65e38;
+}
+
+.link, .link:visited, .link:hover, .link:active {
+  color: #f65e38;
+  text-decoration: none;
+  font-size: 10px;
+  background: none;
 }
 
 .separator {
   border-bottom: 1px dotted #333;
+  clear: both;
+}
+
+.clear {
   clear: both;
 }
 
@@ -52,56 +110,25 @@ h4 {
   display: none;
 }
 
+.tweet {
+  padding-top: 5px;
+}
+
+.tweet .date {
+  color: #1c1c1c;
+  font-size: 10px;
+}
+
 #videos {
-  clear: both;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px;
 }
 
-#videos #title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#videos #player {
-  float: left;
+.player {
   width: 60%;
 }
 
-#videos #details {
-  float: right;
+.details {
   width: 40%;
-  height: 180px;
+  height: 190px;
   overflow: hidden;
-}
-
-#locator {
-  float: left;
-  width: 50%;
-}
-
-#newsletter {
-  float: right;
-  width: 50%;
-}
-
-#newsletter input {
-  display: block;
-}
-
-#events {
-  float: left;
-  width: 50%;
-}
-
-#twitter {
-  float: right;
-  width: 50%;
-}
-
-#twitter #feed_header {
-  float: left;
-}
-
-#twitter #see_more {
-  float: right;
 }
