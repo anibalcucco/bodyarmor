@@ -48,7 +48,7 @@
 
   $(document).ready(function() {
     carousel = $("#videos #carousel");
-    current  = $("#videos #current");
+    current  = $("#videos #current_video");
     album    = carousel.data("album");
     item     = $("#videos .jcarousel-item");
 

@@ -7,11 +7,11 @@
 
 <div class="separator"></div>
 
-<div id="nutricional">
-  NUTRICIONAL INFORMATION
+<div>
+  <img src="/images/nutricional.png">
 </div>
 
-<div class="separator"></div>
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.google.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
 
 <div id="introduction_video">
   <iframe src="http://player.vimeo.com/video/9670565?title=0&amp;byline=0&amp;portrait=0" width="510" height="350" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
@@ -26,6 +26,7 @@
   <h3>PRODUCT</h3>
   <h4>LOCATOR</h4>
   <input type="button" value="FIND A STORE" class="button" />
+  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.google.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
 </div>
 
 <div class="right">
@@ -37,6 +38,7 @@
     <input type="submit" class="button" value="SIGN UP" />
     <input type="hidden" id="idstamp" name="idstamp" value="TUUDYMtDWl8BmrNqonp5BeRHtzGKKh5ycitcQtcboFU=" />
   </form>
+  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.google.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
 </div>
 
 <div class="separator"></div>
@@ -45,7 +47,7 @@
 <h2>IN ACTION</h2>
 
 <div id="videos">
-  <div id="current"></div>
+  <div id="current_video"></div>
   <ul id="carousel" data-album="61259" class="jcarousel-skin-bodyarmor"></ul>
 </div>
 
@@ -61,7 +63,7 @@
     <option value="event2">Event2</option>
   </select>
 
-  <div id="event_description"></div>
+  <div id="current_event"></div>
 
   <div id="event1" class="event">
     <div class="description">The Description</div>
@@ -85,6 +87,7 @@
 
   <div id="event2" class="event">
     <div class="description">The Description2</div>
+    <div class="url">http://www.google.com</div>
     <div class="item">
       <img src="http://b.vimeocdn.com/ts/209/730/20973011_100.jpg">
       <img src="http://b.vimeocdn.com/ts/209/730/20973011_100.jpg">
@@ -98,8 +101,6 @@
       <img src="http://b.vimeocdn.com/ts/209/730/20973011_100.jpg">
     </div>
   </div>
-
-  <ul id="carousel" data-profile="PepsiIndia" class="jcarousel-skin-bodyarmor" width="250px"></ul>
 </div>
 
 <div id="twitter" class="right">
@@ -135,16 +136,29 @@
 
 <script id="video_template" type="text/x-jquery-tmpl">
   <div class="player left">
-    <iframe src="http://player.vimeo.com/video/${id}"
-            width="260"
-            height="180"
+    <iframe src="http://player.vimeo.com/video/${id}?title=0&amp;byline=0&amp;portrait=0"
+            width="320"
+            height="220"
             frameborder="0"
             webkitAllowFullScreen
             allowFullScreen>
     </iframe>
   </div>
   <div class="details right">
-    <h6>${title}</h6>
+    <h6>${title.slice(0, 50)}</h6>
+    <p>${description.slice(0, 150)}</p><br/>
+    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.google.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+  </div>
+</script>
+
+<script id="event_template" type="text/x-jquery-tmpl">
+  <div id="event_${id}">
     <p>${description}</p>
+    <ul class="jcarousel-skin-bodyarmor">
+      {{each(i, item) items}}
+        <li><a href="${url}" target="_blank">{{html $(item).html() }}</a></li>
+      {{/each}}
+    </ul>
+    <iframe src="//www.facebook.com/plugins/like.php?href=${url}&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=35&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
   </div>
 </script>
