@@ -50,6 +50,7 @@ p {
   font-size: 10px;
   margin: 0;
   padding-top: 5px;
+  line-height: 15px;
 }
 
 li {
@@ -124,6 +125,67 @@ input {
 
 .details {
   width: 35%;
+}
+
+#transparent_map {
+  position: absolute;
+  z-index: 30;
+  width: 520px;
+  height: 379px;
+  border: none;
+}
+
+.empty_bottle {
+  background: transparent url(/images/empty_bottle.png) no-repeat 0 0;
+  width: 87px;
+  height: 233px;
+  position: absolute;
+  cursor: pointer;
+  top: 129px;
+  font-size: 9px;
+}
+
+.bottle_text {
+  display: none;
+  margin: 45px 0px 0px 10px;
+}
+
+.bottle_text h7 {
+  color: #9f0000;
+  text-align: center;
+}
+
+.bottle_text ul {
+  font: black;
+  padding-left: 12px;
+}
+
+.empty_bottle li {
+  list-style-type: circle;
+}
+
+.raspberry {
+  left: 14px;
+}
+
+.strawberry {
+  left: 99px;
+}
+
+.cherry {
+  left: 184px;
+}
+
+.tropical {
+  left: 269px;
+}
+
+.orange_mango {
+  left: 353px;
+}
+
+.pomegranate {
+  left: 439px;
 }
 
 #introduction_video {
