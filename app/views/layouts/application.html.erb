@@ -10,5 +10,27 @@
 </head>
 <body>
   <%= yield %>
+
+  <div id="fb-root"></div>
+  <script type="text/javascript">
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '148154988610481',
+        status: true,
+        cookie: true,
+        xfbml: true
+      });
+      //this resizes the the i-frame
+      //on an interval of 100ms
+      FB.Canvas.setAutoResize(100);
+    };
+    (function() {
+      var e = document.createElement('script');
+      e.async = true;
+      e.src = document.location.protocol +
+       '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+  </script>
 </body>
 </html>
