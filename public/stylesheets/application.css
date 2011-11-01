@@ -254,7 +254,7 @@ select {
 
 .bottle_text {
   display: none;
-  margin: 45px 0px 0px -5px;
+  margin: 50px 0px 0px -5px;
   text-align: center;
 }
 
@@ -265,13 +265,17 @@ select {
 }
 
 .bottle_text ul {
-  font: black;
   padding-left: 25px;
   text-align: left;
+  margin-top: 5px;
+  list-style-type: none;
 }
 
 .empty_bottle li {
-  list-style-type: circle;
+  background-image: url(/images/bullet.jpg);
+  background-repeat: no-repeat;
+  padding: 0px 9px 5px 12px;
+  margin-left: -17px;
 }
 
 .raspberry {
