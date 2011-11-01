@@ -3,12 +3,12 @@
   var username = null;
 
   function load() {
-    var url = "http://twitter.com/statuses/user_timeline.json?screen_name=" + username + "&include_entities=true&include_rts=true&count=5&callback=?";
+    var url = "http://twitter.com/statuses/user_timeline.json?screen_name=" + username + "&include_entities=true&include_rts=true&count=10&callback=?";
     $.getJSON(url, {}, function(tweets) {
-      $("#tweet_template").tmpl(tweets).appendTo("#feed");
       if (tweets.length == 0) {
         feed.html("No tweets found");
       }
+      $("#tweet_template").tmpl(tweets.slice(0, 3)).appendTo("#feed");
     });
   }
 
