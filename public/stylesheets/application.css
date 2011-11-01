@@ -31,6 +31,7 @@ h4 {
 h5 {
   font-size: 12px;
   color: black;
+  font-weight: normal;
   margin: 0;
 }
 
@@ -61,8 +62,18 @@ ul {
   padding: 0;
 }
 
-input {
-  display: block;
+select {
+  border: 1px solid #C3C3C3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #FBFBFB;
+  -webkit-transition: border linear .2s,box-shadow linear .2s;
+  -moz-transition: border linear .2s,box-shadow linear .2s;
+  transition: border linear .2s,box-shadow linear .2s;
+  width: 230px;
+  margin-top: 5px;
+  height: 25px;
 }
 
 #twitter h5 {
@@ -151,6 +162,7 @@ input {
   width: 155px;
   margin-top: 5px;
   padding: 5px;
+  display: block;
 }
 
 .button {
@@ -242,21 +254,28 @@ input {
 
 .bottle_text {
   display: none;
-  margin: 45px 0px 0px 10px;
+  margin: 50px 0px 0px -5px;
+  text-align: center;
 }
 
 .bottle_text h7 {
   color: #9f0000;
+  font-weight: bold;
   text-align: center;
 }
 
 .bottle_text ul {
-  font: black;
-  padding-left: 12px;
+  padding-left: 25px;
+  text-align: left;
+  margin-top: 5px;
+  list-style-type: none;
 }
 
 .empty_bottle li {
-  list-style-type: circle;
+  background-image: url(/images/bullet.jpg);
+  background-repeat: no-repeat;
+  padding: 0px 9px 5px 12px;
+  margin-left: -17px;
 }
 
 .raspberry {
