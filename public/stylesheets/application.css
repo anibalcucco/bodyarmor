@@ -65,6 +65,16 @@ input {
   display: block;
 }
 
+#twitter h5 {
+  float: left;
+  width: 60%;
+}
+
+#see_more {
+  float: right;
+  width: 30%;
+}
+
 .right a {
   text-align: right;
   display: inline;
@@ -101,23 +111,30 @@ input {
 .map {
   float: right;
   margin-top: -30px;
-  margin-left: -5px;
+  margin-right: 10px;
   margin-bottom: 20px;
 }
 
-.left {
-  float: left;
-  width: 50%;
-}
-
-.right {
-  float: right;
-  width: 50%;
+#locator {
+  margin-left: 10px;
 }
 
 #locator .button {
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+#events {
+  float: left;
+  width: 47%;
+}
+
+#twitter {
+  float: right;
+  width: 49%;
+  height: 320px;
+  padding-left: 15px;
+  border-left: 1px dotted #333;
 }
 
 .field {
@@ -195,11 +212,14 @@ input {
 }
 
 .player {
+  float: left;
   width: 65%;
 }
 
 .details {
+  float: right;
   width: 35%;
+  height: 225px;
 }
 
 #transparent_map {
