@@ -6,7 +6,7 @@ body {
 h1 {
   font-weight: bold;
   font-size: 10px;
-  margin: 0;
+  margin: 5px 0 -4px 0;
 }
 
 h2 {
@@ -84,11 +84,6 @@ select {
 #see_more {
   float: right;
   width: 30%;
-}
-
-.right a {
-  text-align: right;
-  display: inline;
 }
 
 .hide {
@@ -308,17 +303,21 @@ select {
 }
 
 .tropical {
-  left: 269px;
+  left: 268px;
 }
 
 .orange_mango {
-  left: 353px;
+  left: 351px;
 }
 
 .pomegranate {
-  left: 439px;
+  left: 436px;
 }
 
 #introduction_video {
   margin-top: 30px;
+}
+
+#fb-root {
+  clear: both;
 }
