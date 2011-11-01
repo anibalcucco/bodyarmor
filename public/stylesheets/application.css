@@ -132,13 +132,13 @@ select {
 
 #events {
   float: left;
-  width: 47%;
+  width: 58%;
 }
 
 #twitter {
   float: right;
-  width: 49%;
-  height: 320px;
+  width: 38%;
+  height: 430px;
   padding-left: 15px;
   border-left: 1px dotted #333;
 }
