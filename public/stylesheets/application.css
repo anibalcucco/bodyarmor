@@ -234,6 +234,23 @@ select {
   height: 225px;
 }
 
+.promotion {
+  border: 1px solid #c2b4b4;
+  height: 74px;
+  margin: 10px;
+}
+
+.promotion img {
+  float: left;
+  width: 20%;
+}
+
+.promotion_details {
+  float: right;
+  width: 76%;
+  padding: 5px;
+}
+
 #transparent_map {
   position: absolute;
   z-index: 30;
