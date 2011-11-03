@@ -8,7 +8,7 @@
       if (tweets.length == 0) {
         feed.html("No tweets found");
       }
-      $("#tweet_template").tmpl(tweets.slice(0, 3)).appendTo("#feed");
+      $("#tweet_template").tmpl(tweets.slice(0, 4)).appendTo("#feed");
     });
   }
 

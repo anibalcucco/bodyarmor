@@ -86,6 +86,10 @@ select {
   width: 30%;
 }
 
+#follow_us {
+  float: right;
+}
+
 .hide {
   display: none;
 }
@@ -138,7 +142,7 @@ select {
 #twitter {
   float: right;
   width: 38%;
-  height: 430px;
+  min-height: 440px;
   padding-left: 15px;
   border-left: 1px dotted #333;
 }
