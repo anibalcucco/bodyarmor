@@ -25,6 +25,11 @@
   width: 120px;
 }
 
+#events .jcarousel-item img {
+  width: 125px;
+  height: 125px;
+}
+
 .jcarousel-clip {
   overflow: hidden;
 }
