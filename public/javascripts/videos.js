@@ -2,6 +2,7 @@
   var videos   = [];
   var carousel = null;
   var album    = null;
+  var user     = null;
   var current  = null;
   var item     = null;
 
@@ -24,10 +25,9 @@
   }
 
   function youtube() {
-    var playListURL = "http://gdata.youtube.com/feeds/api/playlists/" + album + "?v=2&alt=json&callback=?";
+    var userURL = "http://gdata.youtube.com/feeds/api/users/" + user + "/uploads?v=2&alt=json&callback=?";
     var videoURL= "http://www.youtube.com/embed/";
-    $.getJSON(playListURL, function(data) {
-      feed = data;
+    $.getJSON(userURL, function(data) {
       $.each(data.feed.entry, function(i, item) {
         var title = item.title.$t;
         var description = item.media$group.media$description.$t;
@@ -78,10 +78,11 @@
     carousel = $("#videos #carousel");
     current  = $("#videos #current_video");
     album    = carousel.data("album");
+    user     = carousel.data("user");
     item     = $("#videos .jcarousel-item");
 
     if (carousel.length) {
-      vimeo();
+      youtube();
       setupCarousel();
     }
   });

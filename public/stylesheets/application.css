@@ -71,7 +71,7 @@ select {
   -webkit-transition: border linear .2s,box-shadow linear .2s;
   -moz-transition: border linear .2s,box-shadow linear .2s;
   transition: border linear .2s,box-shadow linear .2s;
-  width: 230px;
+  width: 280px;
   margin-top: 5px;
   height: 25px;
 }

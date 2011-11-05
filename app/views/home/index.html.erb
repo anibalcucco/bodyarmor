@@ -98,11 +98,12 @@
   </p>
   <p>
     <div class="fields">
-      <input type="button" value="FIND A STORE" class="button" />
+      <input type="button" value="FIND A STORE" class="button" onclick="$('#store_locator_message').show();" />
     </div>
     <div class="map">
       <img src="/images/map.png">
     </div>
+    <p id="store_locator_message" class="hide">We're still working on this. It'll be available soon!</p>
   </p>
   <!-- Facebook Like button for store locator -->
   <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></p>
@@ -143,12 +144,12 @@
 <div id="videos">
   <div id="current_video"></div>
   <!--
-    This is the vimeo album we show in the carousel.
-    You can change the album by setting the "data-album" attribute.
-    We'll automatically build the videos carousel after getting the album videos.
+    We show in the carousel all the user youtube videos.
+    You can change the user by setting the "data-user" attribute.
+    We'll automatically build the videos carousel after getting all user videos.
     Don't change "id" or "class" attributes.
   -->
-  <ul id="carousel" data-album="61259" class="jcarousel-skin-bodyarmor"></ul>
+  <ul id="carousel" data-user="DrinkBodyArmor" class="jcarousel-skin-bodyarmor"></ul>
 </div>
 
 <div class="separator"></div>
@@ -175,18 +176,29 @@
     Preserve the div's "class" attributes.
   -->
   <select>
-    <option value="event1">DEL MAR MUD RUN 2011</option>
-    <option value="event2">World Of Dance 2001</option>
+    <option value="event1">Long Beach Marathon</option>
+    <option value="event2">The Labor Day Weekend - BANANA JAM</option>
+    <option value="event3">Gladiator RocknRun</option>
   </select>
 
   <div id="event1" class="event">
-    <p>The SUPERDRINK was onsite at the 2011 DEL MAR MUD RUN in San Diego, CA! Had a blast with all of the mud lovers and we can't wait for the next run. See you all in Pomona on November 5th!</p>
-    <a href="http://www.facebook.com/media/set/?set=a.261211520581601.55662.199404453428975&type=1" target="_blank" class="link">view more >></a>
+    <p>
+      BODYARMOR is a proud sponsor of the 2011 Long Beach International City Bank Marathon<br/>
+      Follow the journey of 25K participants as they put themselves up to the challenge.
+    </p>
+    <a href="http://www.youtube.com/user/DrinkBODYARMOR#p/a/u/0/WMUsF-YN1P8" target="_blank" class="link">view more >></a>
   </div>
 
   <div id="event2" class="event">
-    <p>2011 World of Dance Sponsored by BodyArmor</p>
-    <a href="http://www.facebook.com/media/set/?set=a.263014000401353.56140.199404453428975&type=1" target="_blank" class="link">view more >></a>
+    <p>Cisco Adler & the Pigeons, Mod Sun & Chris Young the Rapper & Rossy. It all went down at the world famous Malibu Inn!</p>
+    <a href="http://www.youtube.com/user/DrinkBODYARMOR#p/a/u/2/r3j57g9FBl4" target="_blank" class="link">view more >></a>
+  </div>
+
+  <div id="event3" class="event">
+    <p>
+      BODYARMOR is a proud sponsor of the 2011 Gladiator RocknRun
+    </p>
+    <a href="http://www.youtube.com/user/DrinkBODYARMOR#p/a/u/1/e7eAb315xoU" target="_blank" class="link">view more >></a>
   </div>
 
   <!--

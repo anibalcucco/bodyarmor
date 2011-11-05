@@ -1,24 +1,24 @@
 #videos .jcarousel-clip {
-  width:  420px;
-  height: 75px;
+  width:  370px;
+  height: 90px;
 }
 
 #videos .jcarousel-item {
-  width: 75px;
-  height: 75px;
+  width: 115px;
+  height: 90px;
 }
 
-.jcarousel-container {
+#videos .jcarousel-container {
+  padding: 10px 43px;
+}
+
+#events .jcarousel-container {
   padding: 20px;
 }
 
 #events .jcarousel-clip {
   width:  255px;
   height: 255px;
-}
-
-#videos .jcarousel-item {
-  width: 95px;
 }
 
 #events .jcarousel-item {
@@ -60,12 +60,12 @@
 }
 
 #videos .jcarousel-next {
-  margin-top: -67px;
+  margin-top: -73px;
   margin-right: -5px;
 }
 
 #videos .jcarousel-prev {
-  margin-top: -67px;
+  margin-top: -73px;
   margin-left: -35px;
 }
 
