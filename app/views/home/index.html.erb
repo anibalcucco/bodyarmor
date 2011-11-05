@@ -1,8 +1,10 @@
 <div>
+  <!-- This is the empty bottle shown on mouse-over. Here you can customize the texts shown in the different bottles -->
   <div id="empty_bottle">
     <div id="text_raspberry" class="bottle_text">
       <div class="bottle_title">Raspberry<br/>Blueberry Goji</div>
       <ul>
+        <!-- Raspberry empty bottle text -->
         <li>Sweet complex berry blend</li>
         <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
       </ul>
@@ -11,6 +13,7 @@
     <div id="text_strawberry" class="bottle_text">
       <div class="bottle_title">Strawberry<br/>Banana Guava</div>
       <ul>
+        <!-- Strawberry empty bottle text -->
         <li>Smooth & sweet with coconut undertones</li>
         <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
       </ul>
@@ -19,6 +22,7 @@
     <div id="text_cherry" class="bottle_text">
       <div class="bottle_title">Cherry<br/>Citrus</div>
       <ul>
+        <!-- Cherry empty bottle text -->
         <li>Cherry punch meets citrus lime</li>
         <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
       </ul>
@@ -27,6 +31,7 @@
     <div id="text_tropical" class="bottle_text">
       <div class="bottle_title">Tropical<br/>Mandarin</div>
       <ul>
+        <!-- Tropical Mango empty bottle text -->
         <li>Mango with a mandarin twist</li>
         <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
       </ul>
@@ -35,6 +40,7 @@
     <div id="text_orange_mango" class="bottle_text">
       <div class="bottle_title">Orange Mango<br/>Black Tea</div>
       <ul>
+        <!-- Orange Mango empty bottle text -->
         <li>Complex flavor that highlights how well coconut water and tea go together</li>
         <li>Formulated with proprietary nutracuetical blends</li>
       </ul>
@@ -43,6 +49,7 @@
     <div id="text_pomegranate" class="bottle_text">
       <div class="bottle_title">Promegranate<br/>Acai Green Tea</div>
       <ul>
+        <!-- Pomegranate empty bottle text -->
         <li>Complex flavor that highlights how well coconut water and tea go together</li>
         <li>Formulated with proprietary nutracuetical blends</li>
       </ul>
@@ -53,6 +60,7 @@
     <img src="/images/transp.gif" id="transparent_map" usemap="#bottles_map" />
     <img src="/images/background.jpg">
 
+    <!-- This is the image map that defines the bottle areas to handle the mouse-over behavior -->
     <map name="bottles_map" id="bottles_map">
       <area id="raspberry" shape="rect" coords="5,118,88,346"/>
       <area id="strawberry" shape="rect" coords="90,118,173,346"/>
@@ -64,10 +72,18 @@
   </div>
 </div>
 
+<!-- Facebook Like button for main image -->
 <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
 
+<!-- This is the introductory video. You can change the video by changing the iframe code -->
 <div id="introduction_video">
-  <iframe src="http://player.vimeo.com/video/9670565?title=0&amp;byline=0&amp;portrait=0" width="510" height="350" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+  <!--
+    Use this structure for a vimeo video:
+
+    <iframe src="http://player.vimeo.com/video/9670565?title=0&amp;byline=0&amp;portrait=0" width="510" height="350" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+  -->
+
+  <iframe width="510" height="315" src="http://www.youtube.com/embed/WMUsF-YN1P8" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="separator"></div>
@@ -88,10 +104,13 @@
       <img src="/images/map.png">
     </div>
   </p>
+  <!-- Facebook Like button for store locator -->
   <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></p>
 </div>
 
+<!-- Newsletter form by created with Wufoo -->
 <div id="newsletter">
+  <!-- Don't change the action url. It's used by Wufoo -->
   <form id="newsletter_form" method="post" action="https://promojam.wufoo.com/forms/s7p2m7/#public">
     <p>
       <h3>NEWSLETTER & EXCLUSIVE OFFER</h3>
@@ -108,9 +127,11 @@
     </p>
     <p>
       <input type="submit" class="button" value="SIGN UP" />
+      <!-- Don't remove this hidden field. It's used by Wufoo -->
       <input type="hidden" id="idstamp" name="idstamp" value="TUUDYMtDWl8BmrNqonp5BeRHtzGKKh5ycitcQtcboFU=" />
     </p>
   </form>
+  <!-- Facebook Like button for newsletter -->
   <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></p>
 </div>
 
@@ -121,6 +142,12 @@
 
 <div id="videos">
   <div id="current_video"></div>
+  <!--
+    This is the vimeo album we show in the carousel.
+    You can change the album by setting the "data-album" attribute.
+    We'll automatically build the videos carousel after getting the album videos.
+    Don't change "id" or "class" attributes.
+  -->
   <ul id="carousel" data-album="61259" class="jcarousel-skin-bodyarmor"></ul>
 </div>
 
@@ -131,6 +158,22 @@
   <h2>HERE'S THE SKINNY</h2>
 
   <h5>See Our Upcoming Events</h5>
+  <!--
+    This is the events pulldown. To add a new event, create a new option with a specific event id for the select:
+
+    <option value="some_event">Some event in the pulldown</option>
+
+    Then create a div using the "value" chosen for the option:
+
+    <div id="some_event" class="event">
+      <p>This is the description of the event</p>
+      <a href="http://some/event/url" target="_blank" class="link">view more >></a>
+    </div>
+
+    Remember to add the same thing for option's "value" and div's "id".
+    We use that to show the correct div depending on the selected option.
+    Preserve the div's "class" attributes.
+  -->
   <select>
     <option value="event1">DEL MAR MUD RUN 2011</option>
     <option value="event2">World Of Dance 2001</option>
@@ -146,6 +189,17 @@
     <a href="http://www.facebook.com/media/set/?set=a.263014000401353.56140.199404453428975&type=1" target="_blank" class="link">view more >></a>
   </div>
 
+  <!--
+    This is the events carousel html structure to show 2 pictures per column.
+    This is a sample column:
+
+    <li>
+      <a href="http://some/album/url"><img src="http://some/125x125picture/url"></a>
+      <a href="http://another/album/url"><img src="http://another/125x125picture/url"></a>
+    </li>
+
+    You can add just picture but do that only in the last column so the carousel looks good.
+  -->
   <ul id="events_carousel" class="jcarousel-skin-bodyarmor">
     <li>
       <a href="http://www.facebook.com/media/set/?set=a.263014000401353.56140.199404453428975&type=3"><img src="http://photos-h.ak.fbcdn.net/hphotos-ak-ash4/302979_263018913734195_199404453428975_657012_613670476_a.jpg"></a>
@@ -153,13 +207,14 @@
     </li>
     <li>
       <a href="http://www.facebook.com/media/set/?set=a.247816011921152.52349.199404453428975&type=1"><img src="http://photos-a.ak.fbcdn.net/hphotos-ak-ash4/316570_247833995252687_199404453428975_612126_678266701_a.jpg"></a>
-      <img src="http://www.rgactive.com/images/homepage_panel/EventWebHomeenlarge.jpg">
+      <a href="http://www.facebook.com/media/set/?set=a.199405126762241.42836.199404453428975&type=3"><img src="http://photos-a.ak.fbcdn.net/hphotos-ak-snc7/300950_1860130321543_1789490465_1274247_1281368679_a.jpg"></a>
     </li>
     <li>
       <a href="http://www.facebook.com/media/set/?set=a.229990503703703.49610.199404453428975&type=1"><img src="http://photos-f.ak.fbcdn.net/hphotos-ak-snc6/263399_208711329164954_199404453428975_506367_7163363_a.jpg"></a>
     </li>
   </ul>
 
+  <!-- Facebook Like button for events section -->
   <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
 </div>
 
@@ -175,9 +230,25 @@
   <a id="follow_us" href="http://www.facebook.com/drinkbodyarmor?sk=app_53267368995"><img src="/images/twitter.png"></a>
 </div>
 
-<div class="separator"></div>
+<!--
+  To show the promotions, remove the "hide" from the "class" attribute in the separator and the main promotions div.
 
-<div id="promotions">
+  To add a promotion, use this html structure and append to <div id="promotions">:
+
+  <div class="promotion">
+    <img src="http://some/100x100picture/url">
+    <div class="promotion_details">
+      <h5>The Title here</h5>
+      <p>
+        The description here
+      </p>
+      <a class="link" href="http://promotion/page/url" target="_blank">view more >></a>
+    </div>
+  </div>
+-->
+<div class="separator hide"></div>
+
+<div id="promotions" class="hide">
   <h1>BODYARMOR®</h1>
   <h2>CURRENT PROMOTIONS</h2>
 
@@ -204,8 +275,32 @@
   </div>
 </div>
 
+<!--
+  This is a html element used to resize the iframe and remove the scrollbars when showing inside facebook.
+  After loading the page, we'll append a JS script here with some facebook code necessary to do that.
+  More information about this workaround here: http://clockworkcoder.blogspot.com/2011/02/how-to-removing-facebook-application-i.html
+
+  Set the "data-app" attribute to your facebook app id, otherwise, the workaround will not work.
+-->
 <div id="fb-root" data-app=""></div>
 
+<!--
+  This is the html template used to render the tweets.
+  We use jQuery Template to insert data inside the html: http://api.jquery.com/jquery.tmpl/
+
+  This is a reduced version of the tweet's JSON structure:
+
+  created_at: "Fri Nov 04 16:32:13 +0000 2011"
+  favorited: false
+  id: 132495375754989570
+  retweeted: false
+  source: "web"
+  text: "&gt;&gt; Text of the tweet"
+  truncated: false
+  user: Object
+    name: "DrinkBODYARMOR"
+    screen_name: "DrinkBODYARMOR"
+-->
 <script id="tweet_template" type="text/x-jquery-tmpl">
   <li class="tweet">
     <p class="text">
@@ -220,6 +315,30 @@
   </li>
 </script>
 
+<!--
+  This is the html template used to render the current video selected in the carousel.
+  We use jQuery Template to insert data inside the html: http://api.jquery.com/jquery.tmpl/
+
+  This is a reduced version of the Vimeo video JSON structure:
+
+  description: "The description of the video"
+  duration: 228
+  embed_privacy: "anywhere"
+  height: 360
+  id: 30195371
+  mobile_url: "http://vimeo.com/m/30195371"
+  tags: "tag1, tag2"
+  thumbnail_large: "http://b.vimeocdn.com/ts/203/444/203444961_640.jpg"
+  thumbnail_medium: "http://b.vimeocdn.com/ts/203/444/203444961_200.jpg"
+  thumbnail_small: "http://b.vimeocdn.com/ts/203/444/203444961_100.jpg"
+  title: "The title"
+  upload_date: "2011-10-07 12:03:08"
+  url: "http://player.vimeo.com/video/30195371"
+  user_name: "Drew Stearne"
+  user_portrait_medium: "http://b.vimeocdn.com/ps/264/278/2642781_75.jpg"
+  user_url: "http://vimeo.com/drewstearne"
+  width: 640
+-->
 <script id="video_template" type="text/x-jquery-tmpl">
   <div class="player">
     <iframe src="${url}"
