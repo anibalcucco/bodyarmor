@@ -1,17 +1,34 @@
+/* Videos */
 #videos .jcarousel-clip {
-  width:  370px;
+  width:  490px;
   height: 90px;
+  margin-left: -3px;
 }
 
 #videos .jcarousel-item {
-  width: 115px;
+  width: 113px;
   height: 90px;
 }
 
 #videos .jcarousel-container {
-  padding: 10px 43px;
+  padding: 15px;
 }
 
+#videos .jcarousel-skin-bodyarmor {
+  clear: both;
+}
+
+#videos .jcarousel-next {
+  margin-top: -73px;
+  margin-right: -7px;
+}
+
+#videos .jcarousel-prev {
+  margin-top: -73px;
+  margin-left: -15px;
+}
+
+/* Events */
 #events .jcarousel-container {
   padding: 20px;
 }
@@ -30,6 +47,16 @@
   height: 100px;
 }
 
+#events .jcarousel-next {
+  margin-top: -133px;
+  margin-right: -15px;
+}
+
+#events .jcarousel-prev {
+  margin-top: -133px;
+}
+
+/* Generic */
 .jcarousel-clip {
   overflow: hidden;
 }
@@ -43,30 +70,6 @@
 .jcarousel-item-placeholder {
   background: #fff;
   color: #000;
-}
-
-#videos .jcarousel-skin-bodyarmor {
-  padding-left: 35px;
-  clear: both;
-}
-
-#events .jcarousel-next {
-  margin-top: -133px;
-  margin-right: -15px;
-}
-
-#events .jcarousel-prev {
-  margin-top: -133px;
-}
-
-#videos .jcarousel-next {
-  margin-top: -73px;
-  margin-right: -5px;
-}
-
-#videos .jcarousel-prev {
-  margin-top: -73px;
-  margin-left: -35px;
 }
 
 .jcarousel-next {
