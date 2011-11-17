@@ -1,16 +1,20 @@
 <div id="map">
+  <div class="separator"></div>
+
+  <h1>BODYARMOR</h1>
+  <h2>STORE LOCATOR</h2>
+
   <div id="form">
-    STORE LOCATOR
     <%= form_tag({ :url => '#' }, { :id => 'search_form' }) do %>
       <table>
         <tr>
           <td>Your zip code:</td>
-          <td><%= text_field_tag 'address', '', :size => 20, :value => postal_code %></td>
+          <td><%= text_field_tag 'address', '', :size => 20, :value => postal_code, :class => "field" %></td>
         </tr>
         <tr>
           <td>Search within:</td>
-          <td><%= select_tag "within", options_for_select([["5 Miles", "5"], ["10 Miles", "10"], ["25 Miles", "25"]]) %></td>
-          <td><%= submit_tag "FIND A STORE", :id => "search_button" %></td>
+          <td><%= select_tag "within", options_for_select(within_options, 5) %></td>
+          <td><%= submit_tag "FIND A STORE", :id => "search_button", :class => "button" %></td>
         </tr>
       </table>
     <% end %>

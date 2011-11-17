@@ -1,13 +1,12 @@
 <script id="store_template" type="text/x-jquery-tmpl">
   <li>
-    <div class="name">
-      ${name}
-    </div>
-    <div class="info">
+    <h1>${name}</h1>
+    <p>
       ${phone}<br />
       ${address.split(", ")[0]}<br />
       ${address.split(", ")[1] + ", " + address.split(", ")[2]}
-    </div>
-    <a href="#" class="directions" data-address="${address}">Get Directions</a>
+    </p>
+    <a href="#" class="link directions" data-address="${address}">Get Directions</a>
   </li>
+  <div class="separator"></div>
 </script>

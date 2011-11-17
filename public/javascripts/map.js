@@ -77,7 +77,7 @@
   function bindSearchForm() {
     $("#search_form").live('submit', function() {
       reset();
-      $("#search_button").attr('disabled', true).val("FINDING STORES...");
+      $("#search_button").attr('disabled', true).val("FINDING...");
 
       var url = "/map/near.json?" + $("#address, #within").serialize();
       $.getJSON(url, function(data) {

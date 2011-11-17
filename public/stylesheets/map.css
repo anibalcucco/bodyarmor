@@ -2,6 +2,19 @@
   width: 520px;
 }
 
+#map h2 {
+  margin: 0 0 5px 0;
+}
+
+#map select {
+  width: 167px;
+}
+
+#map #form {
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
 #map_canvas {
   float: right;
   width: 60%;
@@ -15,10 +28,25 @@
   overflow-y: scroll;
 }
 
+#stores li {
+  list-style: inherit;
+  color: #f65e38;
+  font-size: 10px;
+}
+
+#stores li h1 {
+  color: black;
+}
+
 #stores ol {
   padding-left: 25px;
 }
 
 #stores .name {
   font-weight: bold;
+}
+
+#stores .separator {
+  margin-left: -15px;
+  margin-right: 5px;
 }
