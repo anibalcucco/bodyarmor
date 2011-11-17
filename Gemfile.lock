@@ -43,6 +43,7 @@ GEM
       rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fastercsv (1.5.1)
     friendly_id_globalize3 (3.2.1.5)
       babosa (~> 0.3.0)
     geocoder (1.0.4)
@@ -151,6 +152,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fastercsv
   geocoder
   jquery-rails
   mysql
