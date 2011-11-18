@@ -24,7 +24,7 @@
         map:       map,
         position:  latlng,
         animation: google.maps.Animation.DROP,
-        icon:      "http://maps.google.com/mapfiles/marker" + letter + ".png",
+        icon:      "http://www.geocodezip.com/mapIcons/marker" + (key + 1) + ".png",
         title:     title
       });
       $("#store_template").tmpl(store).appendTo("#stores_list");
