@@ -10,9 +10,19 @@
   width: 167px;
 }
 
+#map td {
+  color: #4e4e4e;
+  font-weight: bold;
+  font-size: 11px;
+}
+
 #map #form {
   padding-left: 30px;
   padding-bottom: 10px;
+}
+
+#map #form input {
+  margin-top: 7px;
 }
 
 #map_canvas {
@@ -31,22 +41,34 @@
 #stores li {
   list-style: inherit;
   color: #f65e38;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #stores li h1 {
   color: black;
+  font-size: 10px;
 }
 
 #stores ol {
   padding-left: 25px;
 }
 
-#stores .name {
-  font-weight: bold;
+#stores p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+#map .separator {
+  margin: 0;
+  padding: 0;
 }
 
 #stores .separator {
-  margin-left: -15px;
-  margin-right: 5px;
+  margin: 6px 5px -10px 10px;
+  padding: 0;
+}
+
+#stores_list .separator {
+  margin: 6px 5px 0px -15px;
 }
