@@ -1,6 +1,18 @@
+@font-face {
+  font-family: DINBold;
+  src: url(/DIN_Bold.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: DINRegular;
+  src: url(/DIN_Regular.otf);
+  font-weight: 400;
+}
+
 body {
   width: 520px;
-  font-family: Arial, sans-serif;
+  font-family: DINRegular, Helvetica, Arial, sans-serif;
 }
 
 h1 {
