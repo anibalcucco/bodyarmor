@@ -23,7 +23,7 @@
     }());
   }
 
-  function hidOverflow() {
+  function hideOverflow() {
     $("html,body").css("overflow", "hidden");
   }
 
@@ -31,7 +31,7 @@
     element = $("#fb-root");
     appId   = element.data("app");
     if (appId) {
-      hidOverflow();
+      hideOverflow();
       fitInFacebookApp();
     }
   });

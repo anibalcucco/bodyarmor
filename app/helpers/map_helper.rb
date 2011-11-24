@@ -1,7 +1,7 @@
 module MapHelper
 
   def postal_code
-    @location.postal_code.present? ? @location.postal_code : 90210
+    @location.try(:postal_code).present? ? @location.postal_code : 90210
   end
 
   def within_options
