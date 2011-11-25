@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 require File.dirname(__FILE__) + '/../config/environment.rb'
 
+if defined? CSV
+  csv = CSV
+else
+  csv = FasterCSV
+end
+
 created = 0
 exist   = 0
 failed  = 0
@@ -12,7 +18,7 @@ unless ARGV.length == 1
 end
 
 duration = Benchmark.realtime do
-  FasterCSV.foreach(ARGV[0], :headers => :first_row) do |row|
+  csv.foreach(ARGV[0], :headers => :first_row) do |row|
     if row[0].present? && row[1].present? && row[2].present? && row[3].present?
       name    = row[0].strip
       street  = row[1].strip

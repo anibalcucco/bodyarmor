@@ -6,7 +6,10 @@ gem 'rails', '3.0.10'
 gem "mysql"
 gem "geocoder"
 gem "jquery-rails"
-gem "fastercsv"
+
+platforms :ruby_18 do
+  gem "fastercsv"
+end
 
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
