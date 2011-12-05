@@ -1,20 +1,11 @@
 (function($) {
   $(document).ready(function() {
-    var bottle      = $("#empty_bottle");
-
     $('#bottles').find('area').each(function () {
       $(this).mouseover(function (e) {
-
         var name = $(this).attr('id');
-        bottle.attr('class', "empty_bottle " + name);
-        $("#text_" + name).show();
-
+        $("#bottles_background").attr("src", "/images/bottles/" + name + ".jpg");
       }).mouseout(function (e) {
-
-        var name = $(this).attr('id');
-        bottle.attr('class', '');
-        $("#text_" + name).hide();
-
+        $("#bottles_background").attr("src", "/images/bottles/bottles.jpg");
       });
     });
   });

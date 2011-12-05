@@ -1,64 +1,9 @@
 <div>
-  <!-- This is the empty bottle shown on mouse-over. Here you can customize the texts shown in the different bottles -->
-  <div id="empty_bottle">
-    <div id="text_raspberry" class="bottle_text">
-      <div class="bottle_title">Raspberry<br/>Blueberry Goji</div>
-      <ul>
-        <!-- Raspberry empty bottle text -->
-        <li>Sweet complex berry blend</li>
-        <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
-      </ul>
-    </div>
-
-    <div id="text_strawberry" class="bottle_text">
-      <div class="bottle_title">Strawberry<br/>Banana Guava</div>
-      <ul>
-        <!-- Strawberry empty bottle text -->
-        <li>Smooth & sweet with coconut undertones</li>
-        <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
-      </ul>
-    </div>
-
-    <div id="text_cherry" class="bottle_text">
-      <div class="bottle_title">Cherry<br/>Citrus</div>
-      <ul>
-        <!-- Cherry empty bottle text -->
-        <li>Cherry punch meets citrus lime</li>
-        <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
-      </ul>
-    </div>
-
-    <div id="text_tropical" class="bottle_text">
-      <div class="bottle_title">Tropical<br/>Mandarin</div>
-      <ul>
-        <!-- Tropical Mango empty bottle text -->
-        <li>Mango with a mandarin twist</li>
-        <li>Formulated with proprietary nutracuetical blends + coconut water to effectively protect and restore</li>
-      </ul>
-    </div>
-
-    <div id="text_orange_mango" class="bottle_text">
-      <div class="bottle_title">Orange Mango<br/>Black Tea</div>
-      <ul>
-        <!-- Orange Mango empty bottle text -->
-        <li>Complex flavor that highlights how well coconut water and tea go together</li>
-        <li>Formulated with proprietary nutracuetical blends</li>
-      </ul>
-    </div>
-
-    <div id="text_pomegranate" class="bottle_text">
-      <div class="bottle_title">Promegranate<br/>Acai Green Tea</div>
-      <ul>
-        <!-- Pomegranate empty bottle text -->
-        <li>Complex flavor that highlights how well coconut water and tea go together</li>
-        <li>Formulated with proprietary nutracuetical blends</li>
-      </ul>
-    </div>
-  </div>
+  <img src="/images/introducing.jpg">
 
   <div id="bottles">
     <img src="/images/transp.gif" id="transparent_map" usemap="#bottles_map" />
-    <img src="/images/background.jpg">
+    <img id="bottles_background" src="/images/bottles/bottles.jpg">
 
     <!-- This is the image map that defines the bottle areas to handle the mouse-over behavior -->
     <map name="bottles_map" id="bottles_map">
@@ -66,14 +11,21 @@
       <area id="strawberry" shape="rect" coords="90,118,173,346"/>
       <area id="cherry" shape="rect" coords="174,121,257,349"/>
       <area id="tropical" shape="rect" coords="258,117,341,345"/>
-      <area id="orange_mango" shape="rect" coords="343,116,426,344"/>
-      <area id="pomegranate" coords="429,118,512,346"/>
+      <area id="orange" shape="rect" coords="343,116,426,344"/>
+      <area id="pomegranate" coords="429,118,512,344"/>
     </map>
   </div>
 </div>
 
 <!-- Facebook Like button for main image -->
 <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+
+<img src="/images/scroll_products.jpg">
+
+<div class="separator"></div>
+
+<h1>BODYARMOR®</h1>
+<h2>MEET THE SUPERDRINK</h2>
 
 <!-- This is the introductory video. You can change the video by changing the iframe code -->
 <div id="introduction_video">
@@ -83,7 +35,27 @@
     <iframe src="http://player.vimeo.com/video/9670565?title=0&amp;byline=0&amp;portrait=0" width="510" height="350" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
   -->
 
-  <iframe width="510" height="315" src="http://www.youtube.com/embed/WMUsF-YN1P8" frameborder="0" allowfullscreen></iframe>
+  <iframe width="450" height="315" src="http://www.youtube.com/embed/WMUsF-YN1P8" frameborder="0" allowfullscreen></iframe>
+
+  <!-- Facebook Like button for introduction video -->
+  <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></p>
+</div>
+
+<div class="separator"></div>
+
+<div id="shields">
+  <img src="/images/transp.gif" id="transparent_shield" usemap="#shields_map" />
+  <img src="/images/shields.jpg">
+
+  <!-- This is the image map that defines the bottle areas to handle the mouse-over behavior -->
+  <map name="shields_map" id="shields_map">
+    <area id="protection" shape="rect" coords="20,138,147,233"/>
+    <area id="recovery" shape="rect" coords="147,138,276,233"/>
+    <area id="vitamin" shape="rect" coords="277,138,394,233"/>
+    <area id="hydration" shape="rect" coords="394,138,509,233"/>
+  </map>
+
+  <img id="selected_shield" src="">
 </div>
 
 <div class="separator"></div>
@@ -98,12 +70,11 @@
   </p>
   <p>
     <div class="fields">
-      <input type="button" value="FIND A STORE" class="button" onclick="$('#store_locator_message').show();" />
+      <input type="button" value="FIND A STORE" class="button" onclick="window.parent.location.href='http://www.facebook.com/drinkbodyarmor?sk=app_143391699102352';" />
     </div>
     <div class="map">
       <img src="/images/map.png">
     </div>
-    <p id="store_locator_message" class="hide">We're still working on this. It'll be available soon!</p>
   </p>
   <!-- Facebook Like button for store locator -->
   <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></p>
@@ -127,6 +98,7 @@
     </div>
     </p>
     <p>
+      <p id="wufoo_result"></p>
       <input type="submit" class="button" value="SIGN UP" />
       <!-- Don't remove this hidden field. It's used by Wufoo -->
       <input type="hidden" id="idstamp" name="idstamp" value="TUUDYMtDWl8BmrNqonp5BeRHtzGKKh5ycitcQtcboFU=" />
