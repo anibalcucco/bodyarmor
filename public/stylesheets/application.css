@@ -249,13 +249,14 @@ select {
 
 .player {
   float: left;
-  width: 65%;
+  width: 62%;
 }
 
 .details {
   float: right;
-  width: 35%;
+  width: 37%;
   height: 225px;
+  margin-right: 4px;
 }
 
 .promotion {
