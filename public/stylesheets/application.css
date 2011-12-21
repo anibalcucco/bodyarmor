@@ -169,6 +169,7 @@ select {
   min-height: 440px;
   padding-left: 15px;
   border-left: 1px dotted #333;
+  margin-right: 7px;
 }
 
 .field {
