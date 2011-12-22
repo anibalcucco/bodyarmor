@@ -14,6 +14,7 @@ failed  = 0
 unless ARGV.length == 1
   puts "Dude, not the right number of arguments."
   puts "Usage (from project root): ruby script/store_importer.rb db/stores/california.csv\n"
+  puts "To push to heroku: heroku db:push --tables stores\n"
   exit
 end
 
