@@ -1,0 +1,539 @@
+<style>
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: DINBold;
+  src: url(/DIN_Bold.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: DINRegular;
+  src: url(/DIN_Regular.otf);
+  font-weight: 400;
+}
+body {
+  width: 810px;
+  font-family: DINRegular, Helvetica, Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+h1 {
+  font-weight: bold;
+  font-size: 10px;
+  margin: 5px 0 -4px 0;
+}
+h2 {
+  font-weight: normal;
+  color: #f65e38;
+  font-size: 19px;
+  margin: 0 0 20px 0;
+}
+h3 {
+  font-size: 7px;
+  color: gray;
+  margin: 0;
+}
+h4 {
+  font-size: 11px;
+  color: gray;
+  margin: 0;
+}
+h5 {
+  font-size: 12px;
+  color: black;
+  font-weight: normal;
+  margin: 0;
+}
+h6 {
+  font-weight: bold;
+  color: #292929;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+h5.left {
+  display: inline;
+}
+p {
+  color: #666666;
+  font-size: 10px;
+  margin: 0;
+  padding-top: 5px;
+  line-height: 15px;
+  float: left;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+select {
+  border: 1px solid #C3C3C3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #FBFBFB;
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+  width: 220px;
+  margin-top: 5px;
+  height: 25px;
+}
+#introduction_video {
+  text-align: center;
+  padding: 0px 155px;
+  width: 450px;
+  height: 284px;
+  background-image: url(http://i.imgur.com/uAIpO.jpg);
+  margin: 0 auto;
+}
+#introduction_video p {
+  margin-left: 380px;
+}
+#shields {
+  margin-top: 5px;
+  width: 550px;
+  float: left;
+}
+#twitter h5 {
+  float: left;
+  width: 60%;
+}
+#see_more {
+  float: right;
+  width: 30%;
+}
+#follow_us {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.ba_wide_tri_column {
+  width: 242px;
+  border-left: 1px dotted #333;
+  float: left;
+  padding-left: 10px;
+}
+#locator {
+  float: left;
+  width: 240px;
+margin-left: 0px;
+
+}
+#newsletter {
+  float: left;
+  width: 240px;
+  height: 155px;
+margin-left: 0px;
+margin-top: 10px;
+border: none;
+padding-left: 0px;
+}
+.fields {
+  float: left;
+}
+.computer {
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.map {
+  float: right;
+  margin-top: -30px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+#locator .button {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+#events {
+  float: left;
+  width: 240px;
+}
+#twitter {
+  float: left;
+  width: 240px;
+  min-height: 440px;
+  padding-left: 0px;
+  margin-right: 0px;
+        border: none;
+}
+.field {
+  border: 1px solid #C3C3C3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #FBFBFB;
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+  color: #333;
+  outline: medium none;
+  width: 155px;
+  margin-top: 5px;
+  padding: 5px;
+  display: block;
+}
+.button {
+  color: #f65e38;
+  display: inline-block;
+  background-color: #E6E6E6;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(0.25, #ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(#ffffff, color-stop(0.25, #ffffff), #e6e6e6);
+  background-image: -moz-linear-gradient(#ffffff, color-stop(#ffffff, 0.25), #e6e6e6);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  cursor: pointer;
+  width: 100px;
+}
+.link, .link:visited, .link:hover, .link:active {
+  color: #f65e38;
+  text-decoration: none;
+  font-size: 10px;
+  background: none;
+}
+.separator {
+  border-bottom: 1px dotted #333;
+  clear: both;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+.clear {
+  clear: both;
+}
+.event {
+  display: none;
+}
+.tweet {
+  padding-top: 5px;
+}
+.tweet .date {
+  color: #1c1c1c;
+  font-size: 10px;
+}
+.player {
+float: left;
+width: 480px;
+margin-left: 10px;
+}
+.details {
+  float: right;
+  width: 37%;
+  height: 225px;
+  margin-right: 4px;
+}
+.promotion {
+  border: 1px solid #c2b4b4;
+  height: 74px;
+  margin: 10px;
+}
+.promotion img {
+  float: left;
+  width: 20%;
+}
+.promotion_details {
+  float: right;
+  width: 76%;
+  padding: 5px;
+}
+#transparent_map {
+  position: absolute;
+  z-index: 30;
+  width: 810px;
+  height: 455px;
+  border: none;
+}
+#transparent_shield {
+  position: absolute;
+  z-index: 30;
+  width: 520px;
+  height: 250px;
+  border: none;
+}
+#fb-root {
+  clear: both;
+}
+#events .jcarousel-clip {
+width: 190px;
+}
+#events .jcarousel-item {
+width: 90px;
+}
+.jcarousel-item {
+margin-left: 0;
+margin-right: 4px;
+}
+#videos .jcarousel-clip {
+width: 756px;
+height: 90px;
+margin-left: 10px;
+}
+.promotion {
+border: 1px solid #C2B4B4;
+height: auto;
+margin: 0px 0px 20px 0px;
+float: left;
+background-color: #F7F7F7;
+}
+#bottles {
+width: 810px;
+margin: 0 auto;
+}
+#bottles_background {
+width: 810px;
+}
+</style>
+
+<div>
+  <img src="http://i.imgur.com/Vwn0k.jpg" />
+
+  <div id="bottles">
+    <img src="/images/transp.gif" id="transparent_map" usemap="#bottles_map" />
+    <img id="bottles_background" src="/images/bottles/bottles.jpg" />
+
+    
+    <map name="bottles_map" id="bottles_map">
+      <area id="raspberry" shape="rect" coords="5,50,139,440">
+      <area id="strawberry" shape="rect" coords="140,50,277,440">
+      <area id="cherry" shape="rect" coords="278,50,405,440">
+      <area id="tropical" shape="rect" coords="406,50,538,440">
+      <area id="orange" shape="rect" coords="539,50,671,440">
+      <area id="pomegranate" coords="672,50,804,440">
+    </map>
+  </div>
+</div>
+
+
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+
+<img src="/images/scroll_products.jpg" />
+
+<div class="separator"></div>
+
+<h1>BODYARMOR®</h1>
+<h2>MEET THE SUPERDRINK</h2>
+
+
+<div id="introduction_video">
+  
+  <iframe width="450" height="284" src="http://www.youtube.com/embed/FdWNjFjN_YE" frameborder="0"></iframe>
+
+  
+  <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+</p>
+</div>
+
+<div class="separator"></div>
+
+<div id="shields">
+  <img src="/images/transp.gif" id="transparent_shield" usemap="#shields_map" />
+  <img src="/images/shields.jpg" />
+
+  
+  <map name="shields_map" id="shields_map">
+    <area id="protection" shape="rect" coords="20,138,147,233">
+    <area id="recovery" shape="rect" coords="147,138,276,233">
+    <area id="vitamin" shape="rect" coords="277,138,394,233">
+    <area id="hydration" shape="rect" coords="394,138,509,233">
+  </map>
+
+  <img id="selected_shield" />
+</div>
+<div class="ba_wide_tri_column">
+<h1>READY TO EXPERIENCE</h1>
+<h2>THE DIFFERENCE?</h2>
+
+<div id="locator">
+  <h3>PRODUCT</h3>
+    <h4>LOCATOR</h4>
+  
+  <div class="fields">
+      <input type="button" value="FIND A STORE" class="button" onclick="window.parent.location.href='http://www.facebook.com/drinkbodyarmor?sk=app_143391699102352';" />
+    </div>
+    <div class="map">
+      <img src="/images/map.png" />
+    </div>
+  
+  
+  <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+</p>
+</div>
+
+
+<div id="newsletter">
+  
+  <form id="newsletter_form" method="post" action="https://promojam.wufoo.com/forms/s7p2m7/#public">
+    <h3>NEWSLETTER &amp; EXCLUSIVE OFFER</h3>
+      <h4>SIGNUP</h4>
+    
+    <div class="fields">
+      <input id="Field5" name="Field5" type="text" class="field" size="20" />
+      <input id="Field3" name="Field3" type="email" class="field" size="20" />
+    </div>
+    <div class="computer">
+      <img src="/images/computer.png" />
+    </div>
+    
+    <p id="wufoo_result"></p>
+      <input type="submit" class="button" value="SIGN UP" />
+      
+      <input type="hidden" id="idstamp" name="idstamp" value="TUUDYMtDWl8BmrNqonp5BeRHtzGKKh5ycitcQtcboFU=" />
+    
+  </form>
+  
+  <p><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+</p>
+</div>
+</div>
+
+<div class="separator"></div>
+
+<h1>WATCH US</h1>
+<h2>IN ACTION</h2>
+
+<div id="videos">
+  <div id="current_video"></div>
+  
+  <ul id="carousel" data-user="DrinkBodyArmor" class="jcarousel-skin-bodyarmor"></ul>
+</div>
+
+<div class="separator"></div>
+
+<div class="ba_wide_tri_column" style="width: 258px; border: none;">
+<div id="events">
+  <h1>SPONSORED EVENTS</h1>
+  <h2>HERE'S THE SKINNY</h2>
+
+  <h5>See Our Upcoming Events</h5>
+  
+  <select>
+<option value="event2">GRENADE GAMES</option>
+  </select>
+
+<div id="event2" class="event">
+    <p>Grenade Games brings together the snowboarding industry to create a celebration of the sport for its top global athletes and consumers. Come hang with industry celebrities, live music events, VIP after-parties, and outdoor competitions. </p>
+    <a href="http://www.facebook.com/events/224771534287584" target="_blank" class="link">Click for more event details »</a>
+  </div>
+
+  <br />
+  <h5>See Pics From Past Events</h5>
+
+  
+  <ul id="events_carousel" class="jcarousel-skin-bodyarmor">
+    <li>
+      
+      <a href="http://www.facebook.com/media/set/?set=a.272104402825646.58079.199404453428975&amp;type=3" target="_blank" title="Banana Jam"><img src="http://photos-g.ak.fbcdn.net/hphotos-ak-snc7/378763_272108519491901_199404453428975_684610_822564337_a.jpg" /></a>
+      
+      <a href="http://www.facebook.com/media/set/?set=a.263014000401353.56140.199404453428975&amp;type=3" target="_blank" title="World of Dance"><img src="http://photos-h.ak.fbcdn.net/hphotos-ak-ash4/302979_263018913734195_199404453428975_657012_613670476_a.jpg" /></a>
+    </li>
+    <li>
+      
+      <a href="http://www.facebook.com/media/set/?set=a.261211520581601.55662.199404453428975&amp;type=3" target="_blank" title="Del Mar Mud Run"><img src="http://photos-f.ak.fbcdn.net/hphotos-ak-ash4/320564_261212077248212_199404453428975_651977_1194037628_a.jpg" /></a>
+      
+      <a href="http://www.facebook.com/media/set/?set=a.272109316158488.58080.199404453428975&amp;type=3" target="_blank" title="Gladiator Rock'n Run"><img src="http://photos-h.ak.fbcdn.net/hphotos-ak-ash4/314419_272110602825026_199404453428975_684680_109805098_a.jpg" /></a>
+    </li>
+  </ul>
+
+  
+  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+</div>
+</div>
+
+<div class="ba_wide_tri_column" style="width: 258px;">
+<div id="twitter">
+  <h1>ACTION</h1>
+  <h2>AS IT HAPPENS</h2>
+
+  <h5>Twitter Feed</h5>
+  <a id="see_more" class="link" href="http://www.facebook.com/drinkbodyarmor?sk=app_53267368995" target="_blank">see more »</a>
+
+  <ul id="feed" class="clear" data-username="drinkbodyarmor"></ul>
+
+  <a id="follow_us" href="http://www.facebook.com/drinkbodyarmor?sk=app_53267368995"><img src="/images/twitter.png" /></a>
+</div>
+</div>
+
+<div class="ba_wide_tri_column" style="width: 258px;">
+<div id="promotions" class="hide">
+  <h1>BODYARMOR®</h1>
+  <h2>CURRENT PROMOTIONS</h2>
+
+  <div class="promotion">
+    <img src="http://b.vimeocdn.com/ts/209/730/20973011_100.jpg" />
+    <div class="promotion_details">
+      <h5>Promotion Title</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim... veniam, quis
+      </p>
+      <a class="link" href="http://google.com" target="_blank">view more &gt;&gt;</a>
+    </div>
+  </div>
+
+  <div class="promotion">
+    <img src="http://b.vimeocdn.com/ts/203/444/203444961_100.jpg" />
+    <div class="promotion_details">
+      <h5>Promotion Title</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim... veniam, quis
+      </p>
+      <a class="link" href="http://google.com" target="_blank">view more &gt;&gt;</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="fb-root" data-app="140715776036752"></div>
+
+
+<script id="tweet_template" type="text/x-jquery-tmpl">
+  <li class="tweet">
+    <p class="text">
+      ${text}
+    </p>
+    <span class="user">
+      <a href="http://twitter.com/${user.screen_name}" class="link">${user.name}</a>
+    </span>
+    <span class="date">
+      ${$.timeago(created_at)}
+    </span>
+  </li>
+</script>
+
+
+<script id="video_template" type="text/x-jquery-tmpl">
+  <div class="player">
+    <iframe src="${url}"
+            width="480"
+            height="260"
+            frameborder="0"
+            webkitAllowFullScreen
+            allowFullScreen>
+    </iframe>
+  </div>
+  <div class="details">
+    <h6>${title.slice(0, 50)}</h6>
+    <p>${description.slice(0, 280)}</p>
+<br/>
+    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fdrinkbodyarmor&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=148154988610481" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+  </div>
+</script>
