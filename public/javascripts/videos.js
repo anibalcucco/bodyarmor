@@ -25,8 +25,8 @@
   }
 
   function youtube() {
-    var userURL = "http://gdata.youtube.com/feeds/api/users/" + user + "/uploads?v=2&alt=json&callback=?";
-    var videoURL= "http://www.youtube.com/embed/";
+    var userURL = "https://gdata.youtube.com/feeds/api/users/" + user + "/uploads?v=2&alt=json&callback=?";
+    var videoURL= "https://www.youtube.com/embed/";
     $.getJSON(userURL, function(data) {
       $.each(data.feed.entry, function(i, item) {
         var title = item.title.$t;
@@ -35,7 +35,7 @@
         var fragments = feedURL.split("/");
         var id = fragments[fragments.length - 2];
         var url = videoURL + id;
-        var thumb = "http://img.youtube.com/vi/" + id + "/default.jpg";
+        var thumb = "https://img.youtube.com/vi/" + id + "/default.jpg";
         var video = {id: id, title: title, description: description, url: url, thumbnail_small: thumb};
         videos.push(video);
         carousel.append(li(video));
