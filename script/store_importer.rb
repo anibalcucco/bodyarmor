@@ -25,6 +25,7 @@ duration = Benchmark.realtime do
       street  = row[1].strip
       city    = row[2].strip
       zip     = row[3].strip
+      zip.gsub!("-0000", "")
       address = "#{street}, #{city}, #{zip}"
       if Store.find_by_address(address)
         exist += 1

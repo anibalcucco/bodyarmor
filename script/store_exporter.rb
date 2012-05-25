@@ -7,7 +7,13 @@ else
   csv = FasterCSV
 end
 
-csv.open("stores2.csv", "w") do |file|
+unless ARGV.length == 1
+  puts "Dude, not the right number of arguments."
+  puts "Usage (from project root): ruby script/store_exporter.rb db/stores/stores_05_24_12.csv\n"
+  exit
+end
+
+csv.open(ARGV[0], "w") do |file|
   file << [ 'Name', 'Street', 'City', 'Zip' ]
 
   Store.all.each do |store|
